@@ -17,7 +17,7 @@
 				<?php do_action( 'truss_credits' ); ?>
 				<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by <span class="genericon genericon-wordpress"></span> %s', 'truss' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
-				<?php printf( __( 'Theme: %1$s by %2$s.', 'truss' ), 'Some Like it Neat, ', '<a href="http://alexhasnicehair.com" rel="designer">Alex Vasquez</a>' ); ?><br />
+				<?php printf( __( 'Theme: %1$s by %2$s.', 'truss' ), 'Truss, ', '<a href="http://alexhasnicehair.com" rel="designer">Alex Vasquez</a>' ); ?><br />
 
 			</div><!-- .site-info -->
 			<?php tha_footer_bottom(); ?>

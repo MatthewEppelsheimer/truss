@@ -23,7 +23,7 @@ add_action( 'customize_register', 'truss_customize_register' );
 
 
 /**
- * Customizer Some Like it Neat Additions
+ * Customizer Truss Additions
  */
 
 function neat_add_customizer_theme_options($wp_customize) {
