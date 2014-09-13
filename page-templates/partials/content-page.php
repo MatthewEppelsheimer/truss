@@ -2,7 +2,7 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package digistarter
+ * @package truss
  */
 ?>
 <?php tha_entry_before(); ?>
@@ -20,13 +20,13 @@
 		<?php the_content(); ?>
 		<?php
 			wp_link_pages( array(
-				'before' => '<div class="page-links">' . __( 'Pages:', 'digistarter' ),
+				'before' => '<div class="page-links">' . __( 'Pages:', 'truss' ),
 				'after'  => '</div>',
 			) );
 		?>
 
 	</div><!-- .entry-content -->
-	<?php edit_post_link( __( 'Edit', 'digistarter' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
+	<?php edit_post_link( __( 'Edit', 'truss' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
 	<?php tha_entry_bottom(); ?>
 </article><!-- #post-## -->
 <?php tha_entry_after(); ?>
