@@ -1,8 +1,6 @@
 /* =Typographical Mixins
 -------------------------------------------------------------- */
-
 @mixin fontSize($size) {
-  font-size: $size; //Fallback in px
-  font-size: calculateRem($size);
+	font-size: $size; //Fallback in px
+	font-size: calculateRem($size);
 }
-
