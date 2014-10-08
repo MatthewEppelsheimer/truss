@@ -1,0 +1,6 @@
+%body {
+	@extend %base-typography;
+	background-color: $white;
+	// @todo this is a questionable default!
+	color: $white;
+}

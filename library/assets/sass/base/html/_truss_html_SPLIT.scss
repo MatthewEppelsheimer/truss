@@ -1,0 +1,59 @@
+/* @TODO
+ *
+ * Each of the below rule blocks need to be broken up into individual files.
+ *    - place files in same directory as this file
+ *    - tab spacing
+ *    - empty line at end of file
+ *    - Does not apply to rule blocks above this TODO block (if any).
+ *    - If, after this is complete, this file is empty, delete it.
+ *    - If, after this is complete, this file is NOT empty, then relocate it
+ *      up one directory, and remove "SPLIT" from its file name
+ */
+
+h1 {
+	@extend %h1;
+}
+
+h2 {
+	@extend %h2;
+}
+
+h3 {
+	@extend %h3;
+}
+
+h4 {
+	@extend %h4;
+}
+
+h5 {
+	@extend %h5;
+}
+
+h6 {
+	@extend %h6;
+}
+
+p {
+	@extend %p;
+}
+
+a {
+	@extend %a;
+}
+
+hr {
+	@extend hr;
+}
+
+img {
+	@extend img;
+}
+
+blockquote {
+	@extend %blockquote;
+}
+
+cite {
+	@extend %cite;
+}

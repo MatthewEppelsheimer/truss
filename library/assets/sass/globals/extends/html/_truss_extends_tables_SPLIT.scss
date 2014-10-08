@@ -1,0 +1,39 @@
+%table-cell {
+	vertical-align: middle;
+	padding: ($base-line-height / 2) 0;
+}
+
+/* @TODO
+ *
+ * Each of the below rule blocks need to be broken up into individual files.
+ *    - place files in same directory as this file
+ *    - tab spacing
+ *    - empty line at end of file
+ *    - Does not apply to rule blocks above this TODO block (if any).
+ *    - If, after this is complete, this file is empty, delete it.
+ *    - If, after this is complete, this file is NOT empty, then relocate it
+ *      up one directory, and remove "SPLIT" from its file name
+ */
+
+%table {
+	border-collapse: collapse;
+	margin: ($base-line-height / 2) 0;
+	table-layout: fixed;
+	width: 100%;
+}
+
+%tr {
+	vertical-align: middle;
+}
+
+%th {
+	@extend %table-cell;
+	border-bottom: 1px solid darken($base-border-color, 15%);
+	font-weight: bold;
+	text-align: left;
+}
+
+%td {
+	@extend %table-cell;
+	border-bottom: 1px solid $base-border-color;
+}
