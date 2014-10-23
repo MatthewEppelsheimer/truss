@@ -22,3 +22,51 @@
 	margin: 0;
 	max-width: 100%;
 }
+
+%embed {
+	max-width: 100%;
+}
+
+%iframe {
+	max-width: 100%;
+}
+
+%object {
+	max-width: 100%;
+}
+
+%fieldset {
+	background: lighten($base-border-color, 10);
+	border: 1px solid $base-border-color;
+	margin: 0 0 ($base-line-height / 2) 0;
+	padding: $base-line-height;
+}
+
+%label {
+	font-weight: bold;
+	margin-bottom: $base-line-height / 4;
+	
+	&.required:after {
+		content: "*";
+	}
+	
+	abbr {
+		display: none;
+	}
+}
+
+%input {
+	@extend %form-input-base;
+}
+
+%textarea {
+	@extend %form-text-input;
+	resize: vertical;
+}
+
+%select {
+	@extend %form-input-base;
+	margin-bottom: $base-line-height;
+	max-width: 100%;
+	width: auto;
+}

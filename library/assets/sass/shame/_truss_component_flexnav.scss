@@ -1,11 +1,5 @@
 /* Flexnav Base Styles */
 
-$nav_text: #222;
-$top_level: #a6a6a2;
-$second_level: #b2b2af;
-$third_level: #bfbfbc;
-$fourth_level: #cbcbc9;
-
 .flexnav {
 	overflow: hidden;
 	margin: 0 auto;
@@ -16,10 +10,10 @@ $fourth_level: #cbcbc9;
 	-ms-transition: all .5s ease-in-out;
 	transition: all .5s ease-in-out, width 0, height 0, top 0, left 0;
 
-  &.opacity {
-    // opacity: 0;
-    padding-left: 0;
-  }
+	&.opacity {
+		// opacity: 0;
+		padding-left: 0;
+	}
 
 	&.flexnav-show {
 		max-height: 2000px;
@@ -29,6 +23,7 @@ $fourth_level: #cbcbc9;
 		-ms-transition: all .5s ease-in-out;
 		transition: all .5s ease-in-out;
 	}
+
 	&.one-page {
 		position: fixed;
 		top: 50px;
@@ -40,52 +35,69 @@ $fourth_level: #cbcbc9;
 		font-size: 100%;
 		position: relative;
 		overflow: hidden;
-	}
-	li a {
-		position: relative;
-		display: block;
-		padding: .80em;
-		z-index: 2;
-		overflow: hidden;
-		color: $nav_text;
-		background: $top_level;
-		border-bottom: 1px solid rgba(0,0,0,.15);
-		white-space: nowrap;
 
-		&:hover {
-			color: $primary-color !important;
-		}
-	}
-	li ul {
-		display: none;
-		margin-bottom: 0;
-		padding-left: 0;
-		width: 100%;
-		z-index: 5;
-
-		li {
-			font-size: 100%;
+		a {
 			position: relative;
+			display: block;
+			padding: .80em;
+			z-index: 2;
 			overflow: hidden;
+			color: $flexnav_color_nav_text;
+			background: $flexnav_color_top_level;
+			border-bottom: 1px solid rgba(0,0,0,.15);
+			white-space: nowrap;
+	
+			&:hover {
+				color: $primary-color !important;
+			}
+		}
+
+		ul {
+			display: none;
+			margin-bottom: 0;
+			padding-left: 0;
+			width: 100%;
+			z-index: 5;
+	
+			li {
+				font-size: 100%;
+				position: relative;
+				overflow: hidden;
+
+				a {
+					display: block;
+					background: $flexnav_color_second_level;
+				}
+			}
+
+			&.flexnav-show {
+				li {
+					overflow: visible;
+				}
+			}
 		}
 	}
-	li ul.flexnav-show {
 
+	ul {
 		li {
-			overflow: visible;
+			ul {
+				li {
+					a {
+						background: $flexnav_color_third_level;
+					}
+
+					ul {
+						li {
+							a {
+								background: $flexnav_color_fourth_level;
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 
-	li ul li a {
-		display: block;
-		background: $second_level;
-	}
-	ul li ul li a {
-		background: $third_level;
-	}
-	ul li ul li ul li a {
-		background: $fourth_level;
-	}
 	.touch-button {
 		position: absolute;
 		z-index: 999;
@@ -97,9 +109,11 @@ $fourth_level: #cbcbc9;
 		background: #acaca1;
 		background: rgba(0,0,0,.075);
 		text-align: center;
+
 		&:hover {
 			cursor: pointer;
 		}
+
 		.navicon {
 			position: relative;
 			top: 1.4em;
@@ -108,12 +122,13 @@ $fourth_level: #cbcbc9;
 		}
 	}
 }
+
 .menu-button {
 	position: relative;
 	display: block;
 	padding: 1em;
-	background: $top_level;
-	color: $nav_text;
+	background: $flexnav_color_top_level;
+	color: $flexnav_color_nav_text;
 	cursor: pointer;
 	border-bottom: 1px solid rgba(0,0,0,.2);
 
@@ -148,29 +163,64 @@ $fourth_level: #cbcbc9;
 	body.one-page {
 		padding-top: 70px;
 	}
+
 	.flexnav {
 		overflow: visible;
 		&.opacity {
 		  opacity: 1;
 		}
+
 		&.one-page {
 			top: 0;
 			right: auto;
 			max-width: 1080px;
 		}
+
 		li {
 			position: relative;
 			list-style: none;
 			float: left;
 			display: block;
-			background-color: $top_level;
+			background-color: $flexnav_color_top_level;
 			overflow: visible;
-      width: 20%;
+			width: 20%;
+
+			a {
+				border-left: 1px solid #acaca1;
+				border-bottom: none;
+			}
+
+			ul {
+				li {
+					a {
+						border-bottom: none;
+					}
+				}
+
+				li > ul {
+					margin-left: 100%;
+					top: 0;
+				}
+
+				&.open {
+					display: block;
+					opacity: 1;
+					visibility: visible;
+					z-index: 1;
+
+					li {
+						overflow: visible;
+						max-height: 100px;
+					}
+
+					ul.open {
+						margin-left: 100%;
+						top: 0;
+					}
+				}
+			}
 		}
-		li a {
-			border-left: 1px solid #acaca1;
-			border-bottom: none;
-		}
+
 		li > ul {
 			position: absolute;
 			top: auto;
@@ -180,31 +230,8 @@ $fourth_level: #cbcbc9;
 				width: 100%;
 			}
 		}
-		li ul li > ul {
-			margin-left: 100%;
-			top: 0;
-		}
-		li ul li:hover > ul,
-		li ul li > ul.flexnav-show {
-		}
-		li ul li a {
-			border-bottom: none;
-		}
-		li ul.open {
-			display: block;
-			opacity: 1;
-			visibility: visible;
-			z-index: 1;
-			li {
-				overflow: visible;
-				max-height: 100px;
-			}
-			ul.open {
-				margin-left: 100%;
-				top: 0;
-			}
-		}
 	}
+
 	.menu-button {
 		display: none;
 	}
@@ -214,6 +241,7 @@ $fourth_level: #cbcbc9;
 	body.one-page {
 		padding-top: 70px;
 	}
+
 	.flexnav {
 		overflow: visible;
 		&.one-page {
@@ -226,11 +254,18 @@ $fourth_level: #cbcbc9;
 			list-style: none;
 			float: left;
 			display: block;
-			background-color: $top_level;
-      width: 20%;
+			background-color: $flexnav_color_top_level;
+			width: 20%;
 			min-height: 50px;
 			overflow: visible;
+
+			a {
+				border-left: 1px solid #acaca1;
+				border-bottom: none;
+				overflow: visible;
+			}
 		}
+
 		li:hover > ul {
 			display: block;
 			width: 100%;
@@ -240,11 +275,7 @@ $fourth_level: #cbcbc9;
 				float: none;
 			}
 		}
-		li a {
-			border-left: 1px solid #acaca1;
-			border-bottom: none;
-			overflow: visible;
-		}
+
 		li > ul {
 			background:#acaca1;
 			position: absolute;
@@ -254,19 +285,24 @@ $fourth_level: #cbcbc9;
 			z-index: 1;
 			overflow: visible;
 		}
+
 		li ul li ul {
 			top: 0;
 		}
+
 		li ul li a {
 			border-bottom: none;
 		}
+
 		li ul.open {
 			display: block;
 			width: 100%;
 			overflow: visible;
+
 			li {
 				width: 100%;
 			}
+
 			ul.open {
 				margin-left: 100%;
 				top: 0;
@@ -275,14 +311,17 @@ $fourth_level: #cbcbc9;
 				overflow: visible;
 			}
 		}
+
 		ul li:hover ul {
 			margin-left: 100%;
 			top: 0;
 		}
 	}
+
 	.menu-button {
 		display: none;
 	}
+
 	&.ie7 .flexnav li {
 		width: 19.9%;
 	}

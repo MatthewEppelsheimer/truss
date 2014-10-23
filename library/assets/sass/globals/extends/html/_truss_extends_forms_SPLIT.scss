@@ -1,0 +1,52 @@
+/* @TODO
+ *
+ * Each of the below rule blocks need to be broken up into individual files.
+ *    - place files in same directory as this file
+ *    - tab spacing
+ *    - empty line at end of file
+ *    - Does not apply to rule blocks above this TODO block (if any).
+ *    - If, after this is complete, this file is empty, delete it.
+ *    - If, after this is complete, this file is NOT empty, then relocate it
+ *      up one directory, and remove "SPLIT" from its file name
+ */
+
+%form-input-base {
+	display: block;
+	font-family: $form-font-family;
+	font-size: $form-font-size;
+}
+
+%form-text-input {
+	@include box-sizing(border-box);
+	@include transition(border-color);
+	background-color: white;
+	border-radius: $form-border-radius;
+	border: 1px solid $form-border-color;
+	box-shadow: $form-box-shadow;
+	font-family: $form-font-family;
+	font-size: $form-font-size;
+	margin-bottom: $base-line-height / 2;
+	padding: ($base-line-height / 3) ($base-line-height / 3);
+	width: 100%;
+	
+	&:hover {
+		border-color: $form-border-color-hover;
+	}
+	
+	&:focus {
+		border-color: $form-border-color-focus;
+		box-shadow: $form-box-shadow-focus;
+		outline: none;
+	}
+}
+
+%form-input-selection-type {
+	display: inline;
+	margin-right: $base-line-height / 4;
+}
+
+%form-input-file-type {
+	margin-bottom: $base-line-height / 2;
+	padding-bottom: $base-line-height / 3;
+	width: 100%;
+}

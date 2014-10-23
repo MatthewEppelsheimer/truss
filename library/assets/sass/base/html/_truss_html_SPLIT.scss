@@ -65,3 +65,67 @@ a {
 a:visited {
 	@extend %a;
 }
+
+embed {
+	@extend %embed;
+}
+
+iframe {
+	@extend %iframe;
+}
+
+object {
+	@extend %object;
+}
+
+#{$all-text-inputs} {
+	@extend %form-text-input;	
+}
+
+fieldset {
+	@extend %fieldset;
+}
+
+label {
+	@extend %form-input-base;
+}
+
+label {
+	@extend %label;
+}
+
+textarea {
+	@extend %textarea;
+}
+
+input {
+	@extend %input;
+}
+
+input[type="submit"] {
+	@extend %button;
+}
+
+input[type="search"] {
+	@include appearance(none);
+}
+
+input[type="checkbox"] {
+	@extend %form-input-selection-type;
+}
+
+input[type="radio"] {
+	@extend %form-input-selection-type;
+}
+
+input[type="file"] {
+	@extend %form-input-file-type;
+}
+
+select {
+	@extend %select;
+}
+
+select[multiple=multiple] {
+	@extend %form-text-input;
+}
