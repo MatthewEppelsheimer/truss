@@ -2,5 +2,8 @@
 	border-left: 2px solid $base-border-color;
 	color: lighten($base-font-color, 15);
 	margin: $base-line-height 0;
+  	background-color: $extra-light-gray;
+	font-style: italic;
+	padding: 20px;
 	padding-left: $base-line-height / 2;
 }

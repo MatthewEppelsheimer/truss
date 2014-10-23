@@ -9,3 +9,16 @@
  *    - If, after this is complete, this file is NOT empty, then relocate it
  *      up one directory, and remove "SPLIT" from its file name
  */
+
+%hr {
+	border-bottom: 1px solid $base-border-color;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	margin: $base-line-height 0;
+}
+
+%img {
+	margin: 0;
+	max-width: 100%;
+}

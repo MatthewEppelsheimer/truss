@@ -1,4 +1,5 @@
 %base-typography {
+	@include fontSize(18px);
 	font-family: $base-font-family;
 	font-size: $base-font-size;
 	line-height: $unitless-line-height;	
@@ -6,8 +7,23 @@
 }
 
 %base-header-typography {
-  font-family: $header-font-family;
-  line-height: $header-line-height;
-  margin: 0;
-  text-rendering: optimizeLegibility; // Fix the character spacing for headings
+	@include clearfix;
+	font-family: $header-font-family;
+	line-height: $header-line-height;
+	margin: 0;
+	margin-bottom: 20px;
+	text-rendering: optimizeLegibility; // Fix the character spacing for headings
+	clear: both;
+	float: none;
+	text-transform: uppercase;
+
+	a, a:visited {
+		text-decoration: none;
+	}
+}
+
+%strong {
+	@include fontSize(20px);
+	color: #000;
+	font-family: $title;
 }

@@ -1,24 +1,3 @@
-@mixin neat-buttons($border-color: #ccc, $border-radius: 50px, $button-padding: 20px, $button-bg: #ffffff ) {
-	background: $button-bg;
-	border: solid 5px $border-color;
-	border-radius: $border-radius;
-	box-shadow: none;
-	clear: both;
-	font-family: $title;
-	margin: 10px 0;
-	padding: $button-padding;
-	transition: all 200ms ease-in-out;
-
-	&:hover {
-		background: darken( $button-bg, 5% );
-		border: solid 5px darken( $border-color, 20% );
-		border-radius: $border-radius;
-		box-shadow: none;
-		font-family: $title;
-		padding: $button-padding;
-	}
-}
-
 @mixin neat-3d-buttons($border-color: #ccc, $border-radius: 10px, $button-padding: 20px, $button-bg: #ffffff) {
 	background: $button-bg;
 	border-top: solid 3px $border-color;
@@ -44,17 +23,4 @@
 		font-family: $title;
 		padding: $button-padding;
 	}
-}
-
-#submit {
-	@include neat-buttons($button-bg: #ccc );
-}
-
-.neat-button {
-	 // @include ui-tooltip(210px, bottom, rgba(0,0,0, 0.7), ".tooltip");
-	 @include neat-buttons();
-}
-
-.neat-3d-button {
-	@include neat-3d-buttons();
 }

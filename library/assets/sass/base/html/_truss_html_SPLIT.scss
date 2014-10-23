@@ -43,11 +43,11 @@ a {
 }
 
 hr {
-	@extend hr;
+	@extend %hr;
 }
 
 img {
-	@extend img;
+	@extend %img;
 }
 
 blockquote {
@@ -56,4 +56,12 @@ blockquote {
 
 cite {
 	@extend %cite;
+}
+
+a {
+	@extend %a;
+}
+
+a:visited {
+	@extend %a;
 }
