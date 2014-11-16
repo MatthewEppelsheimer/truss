@@ -53,18 +53,20 @@ function truss_setup() {
 
 	}
 
-	// This theme uses wp_nav_menu() in one location.
-	if ( !function_exists('dg_register_nav_menus') ) :
-		function dg_register_nav_menus() {
+	if ( !function_exists('truss_register_nav_menus') ) :
+		function truss_register_nav_menus() {
 
 			register_nav_menu( 'primary-navigation', __( 'Primary Menu', 'truss' ) );
 
 		}
-		add_action( 'init', 'dg_register_nav_menus' );
+		add_action( 'init', 'truss_register_nav_menus' );
 	endif;
 
 	// Enable support for Post Formats.
+	// @todo
+	/*
 	add_theme_support( 'post-formats', array( 'aside', 'image', 'video', 'quote', 'link', 'status', 'gallery', 'chat', 'audio' ) );
+	*/
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'truss_custom_background_args', array(
@@ -156,9 +158,44 @@ endif;
 include( 'library/vendors/tha-theme-hooks/tha-theme-hooks.php' );
 
 /**
+ * Themes and Plugins can check for tha_hooks using current_theme_supports( 'tha_hooks', $hook )
+ * to determine whether a theme declares itself to support this specific hook type.
+ *
+ * Example:
+ * <code>
+ * 		// Declare support for all hook types
+ * 		add_theme_support( 'tha_hooks', array( 'all' ) );
+ *
+ * 		// Declare support for certain hook types only
+ * 		add_theme_support( 'tha_hooks', array( 'header', 'content', 'footer' ) );
+ * </code>
+ */
+// @todo Confirm we really are supporting 'all' of these in actual templaes!
+add_theme_support( 'tha_hooks', array(
+
+	/**
+	 * As a Theme developer, use the 'all' parameter, to declare support for all
+	 * hook types.
+	 * Please make sure you then actually reference all the hooks in this file,
+	 * Plugin developers depend on it!
+	 */
+	'all'
+
+	/**
+	 * If/when WordPress Core implements similar methodology, Themes and Plugins
+	 * will be able to check whether the version of THA supplied by the theme
+	 * supports Core hooks.
+	 */
+//	'core'
+) );
+
+/**
  * Including Kirki Advanced Theme Customizer (https://github.com/aristath/kirki).
  */
+// @todo
+/*
 include_once( dirname( __FILE__ ) . '/library/vendors/kirki/kirki.php' );
+*/
 
 /**
  * WP Customizer
@@ -188,8 +225,17 @@ require get_template_directory() . '/library/vendors/jetpack.php';
 
 /**
  * Including TGM Plugin Activation
+ *
+ * If there is a `required-plugins.php` file in the child theme's root, load its dependencies, then load it.
+ *
+ * Child themers: to implement this, just include a `required-plugins.php` file in your child theme root.
+ *
  */
-require_once( get_template_directory() . '/library/vendors/tgm-plugin-activation/required-plugins.php' );
+
+if ( file_exists( get_stylesheet_directory() . '/required-plugins.php' ) ) {
+	require_once( get_template_directory() . '/library/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php' );
+	require_once( get_stylesheet_directory() . '/required-plugins.php' );
+}
 
 /**
  * Custom Hooks and Filters
