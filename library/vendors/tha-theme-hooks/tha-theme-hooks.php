@@ -24,56 +24,6 @@
 define( 'THA_HOOKS_VERSION', '1.0-draft' );
 
 /**
- * Themes and Plugins can check for tha_hooks using current_theme_supports( 'tha_hooks', $hook )
- * to determine whether a theme declares itself to support this specific hook type.
- *
- * Example:
- * <code>
- * 		// Declare support for all hook types
- * 		add_theme_support( 'tha_hooks', array( 'all' ) );
- *
- * 		// Declare support for certain hook types only
- * 		add_theme_support( 'tha_hooks', array( 'header', 'content', 'footer' ) );
- * </code>
- */
-add_theme_support( 'tha_hooks', array(
-
-	/**
-	 * As a Theme developer, use the 'all' parameter, to declare support for all
-	 * hook types.
-	 * Please make sure you then actually reference all the hooks in this file,
-	 * Plugin developers depend on it!
-	 */
-	'all',
-
-	/**
-	 * Themes can also choose to only support certain hook types.
-	 * Please make sure you then actually reference all the hooks in this type
-	 * family.
-	 *
-	 * When the 'all' parameter was set, specific hook types do not need to be
-	 * added explicitly.
-	 */
-	'html',
-	'body',
-	'head',
-	'header',
-	'content',
-	'entry',
-	'comments',
-	'sidebars',
-	'sidebar',
-	'footer',
-
-	/**
-	 * If/when WordPress Core implements similar methodology, Themes and Plugins
-	 * will be able to check whether the version of THA supplied by the theme
-	 * supports Core hooks.
-	 */
-//	'core'
-) );
-
-/**
  * Determines, whether the specific hook type is actually supported.
  *
  * Plugin developers should always check for the support of a <strong>specific</strong>
@@ -101,20 +51,20 @@ add_filter( 'current_theme_supports-tha_hooks', 'tha_current_theme_supports', 10
  * Special case, useful for <DOCTYPE>, etc.
  * $tha_supports[] = 'html;
  */
- function tha_html_before() {
-	 do_action( 'tha_html_before' );
- }
+function tha_html_before() {
+	do_action( 'tha_html_before' );
+}
 /**
  * HTML <body> hooks
  * $tha_supports[] = 'body';
  */
- function tha_body_top() {
-	 do_action( 'tha_body_top' );
- }
+function tha_body_top() {
+	do_action( 'tha_body_top' );
+}
 
- function tha_body_bottom() {
-	 do_action( 'tha_body_bottom' );
- }
+function tha_body_bottom() {
+	do_action( 'tha_body_bottom' );
+}
 
 /**
 * HTML <head> hooks
