@@ -1,60 +1,205 @@
-# Some Like it Neat
+# Truss
 
-### A WordPress Theme Using _s, Bourbon + Neat and Theme Hook Alliance
+### A Responsive, Semantic WordPress Parent Theme
 
-Description
----------------
+## Introduction
 
-Some Like it Neat is a Minimal Starter theme that is Responsive out of the box. It uses Sass along with Bourbon Neat for help with Responsive grids. It's based on _s and is pretty rad.
+Truss is a Parent theme with the goal of making it **fast** to build responsive child themes with semantic HTML.
 
-What's Inside?
----------------
+It makes this process fast by:
 
-* Bourbon (http://bourbon.io), Neat (http://neat.bourbon.io), Bitters (http://bitters.bourbon.io) and Refills (http://refills.bourbon.io) — Bourbon provides a lightweight Sass library (similar to Compass).
+* Organizing CSS into Sass partials segregated by purpose, to ease re-skinning.
+* Relying on WordPress hooks to load template partials, to ease supplementing, replacing, re-ordering, and removing template elements.
+* Providing great documentation for child theme developers to come up to speed as quickly as possible.
 
- 
-Neat extends bourbon and provides a nice and lightweight grid framework as a base for this project. Refills and Bitters provide additional styling and UI elements. I suggest you visit each of these projects to learn more and how to use them.
+At a glance, Truss uses:
 
-* Underscores (_s) based theme. There's smarter folks than me building great sh*t (http://underscores.me)  
+* A modified version of [_s](http://underscores.me) for markup.
+* An opinionated method of organizing and writing CSS
 
-* Sass. We're using it and to update this theme you should be cozy with it or get ready to learn how to use. As of the initial writing of this ReadMe, I've been using Sass like a piece of shit asshole. I don't know what the fuck I'm doing. So if you do, please feel free to school a chump! If you don't know Sass, you should definitely jump in. The water's fine and you'll thank me later. I accept thanks in burritos, doritos, fritos and cheetos only.
 
-* Theme Hook Alliance — One of the things I learned to love about working with Frameworks were their hooks. Thematic and Genesis introduced me to the notion. Since them I've been using them like they're going out of style. When I set out to make my own starter theme I wanted to make something that had "just the right amount" of features for me. I knew I needed hooks. The THA project was intro'd to me by Brandon Dove, at the OCWP (http://ocwp.org) developer's day meetup. Thought it was super neat. So I bundled that hot mess right into this thing.
+## What's Inside?
 
-* Kirki Advanced Theme Customizer Framework (http://kirki.org) — Adds some functionality to the already awesome built-in theme customizer. It adds cool extras like button sets, slider controls, radio image selectors. Read up on it! For now, I'm placing custom controls using Kirki in /library/inc/wp-customizer/customizer.php
+* A modified version of [_s](http://underscores.me) for markup.
 
-* Flexnav Menu System and Hover Intent
-* TGM PLugin Activation
-* Genericons/Dashicons
-* Pull requests welcome...
+* An opinionated method of organizing and writing CSS, including:
+    * The [Object-oriented CSS](https://github.com/stubbornella/oocss/wiki) philosophy
+    * The [Scalable and Modular Architecture for CSS (SMACCS)](http://smacss.com/) philosophy.
+    * Digesting vendor stylesheets (such as resets) and stitching them intentionally into our partials to boost performance by minimizing rules overwriting rules.
+    * [Sass](http://sass-lang.com), [Bourbon](http://bourbon.io/), and [Neat](http://neat.bourbon.io/) for Responsive grids.
+    * [Sass-globbing](https://github.com/chriseppstein/sass-globbing) to include Sass partials in bulk
+    * [Normalize](git.io/normalize) to reset CSS.
 
+* [Theme Hook Alliance](https://github.com/zamoose/themehookalliance) hooks to ease extension by plugins.
+
+* [Genericons](http://genericons.com/) and [Dashicons](https://github.com/melchoyce/dashicons/) icon fonts
+
+* [Flexnav](http://jasonweaver.name/lab/flexiblenavigation/) responsive navigation menu system
+
+### Browser Support
+
+Truss takes a progressive enhancement approach, meaning that baseline support is guaranteed for an arbitrary list of older browsers, and enhanced CSS is served to newer browsers based on capatilbitiy detection.
+
+Truss supports these baseline browsers, including verification testing:
+
+(@todo replace "latest version" with specifics, as of release-time.)
+
+* The latest version of these browsers for Mac OS X 10.8 and above:
+	* Chrome
+	* Firefox
+	* Safari
+* The latest version of these browsers for Ubuntu version (@todo) and above:
+	* Firefox
+	* (@todo)
+* The latest version of these browsers for Windows 7 and above:
+	* Internet Explorer (IE 8 and later) (@todo verify)
+	* Firefox
+	* Chrome
+* iPhones: (@todo)
+	* 4s (Mobile Safari X.X)
+	* 5 (Mobile Safari X.X)
+	* 5s (Mobile Safari X.X)
+	* 5c (Mobile Safari X.X)
+	* 6 (Mobile Safari X.X)
+	* 6 plus (Mobile Safari X.X)
+* iPads: (@todo)
+	* Original (Mobile Safari X.X)
+	* 2 (Mobile Safari X.X)
+	* 3 (Mobile Safari X.X)
+	* Air (Mobile Safari X.X)
+	* Air 2 (Mobile Safari X.X)
+	* Mini (Mobile Safari X.X)
+	* Mini 2 (Mobile Safari X.X)
+
+## CSS User Guide
+
+Follow the SMACSS.com book's recommendations, in so far as they describe what to consider when writing and organizing CSS selectors and rules. The book's methods help result in CSS that is scalable and easier to maintain, by making as few assumptions about HTML structure as possible (if they need to change in the future, we aren't handcuffed) and by taking an object-oriented approach. 
+
+When it comes to implementation, we do not necessary adhere to the book's specific recommendations. Using Sass allows us to organize things contextually, and gives us new flexibility for documenting CSS, which frees us from some non-semantic recommendations of the SMACSS book. For example, we don't use `l-` to prefix layout class names. That approach is arguably non-semantic, and is no longer necessary when we can provide documentation of every CSS rule in a Sass partial. (Truss will also eventually have an interactive code reference.)
+
+Sass partials are organized into the following folders, sorted in order of import (which is based on dependency ordering):
+
+* `sass/globals/` - everything that does not print out to CSS.
+	* `sass/globals/frameworks/`- 
+	* `sass/globals/variables/` - 
+	* `sass/globals/functions/`- 
+	* `sass/globals/mixins/` - 
+	* `sass/globals/extends/` - 
+	* _Note: You should be able to re-skin the entire theme by modifying only the contents of the `variables/` and `extends/` directories._
+* `sass/base/` - Everything that is not for layout and is not specific to a module. Primarily HTML tag-specific rules. 
+
+
+### Base
+
+#### Definition and Philosophy
+
+…
+
+For more, see the [SMACSS chapter on base styles](http://smacss.com/book/type-module).
+
+#### Base Organization in Truss
+
+…
+
+### Layout
+
+#### Definition and Philosophy
+
+…
+
+For more, see the [SMACSS chapter on layout styles](http://smacss.com/book/type-layout).
+
+#### Layout Organization in Truss
+
+…
+
+
+### Modules
+
+#### Definition and Philosophy
+
+Modules are minor groups of content, subordinate to layout, with a distinct and discrete visual design that makes them appear as a whole. 
+
+Modules are **completely ignorant of their containing elements**. If you move them from inside of one layout container to another, its appearance and behavior should not change. 
+
+From an object-oriented perspective, they are objects of a given class, and so their markup should identify the class and their CSS should implement a self-contained and self-determining encapsulation. (The same can be said of their JavaScript.) 
+
+For more, see the [SMACSS chapter on module styles](http://smacss.com/book/type-module).
+
+#### Module Organization in Truss
+
+…
+
+#### Sub-classing Modules
+
+Avoid conditional styling based on location. If you are changing the look of a module for usage elsewhere on the page or site, sub-class the module, instead. 
+
+To subclass a module, **add a class to it**, prefixed with the module name. For example:
+
+```HTML
+<!-- "Product" is the base class -->
+<div class='product'>
+	<span class='prod-name'>…</span>
+	<span class='prod-vendor'>…</span>
+</div>
+
+<!-- "Product On Sale" is the sub class -->
+<div class='product product-onsale'>
+	<span class='prod-name'>…</span>
+	<span class='prod-vendor'>…</span>
+</div>
+```
+
+### State
+
+#### Definition and Philosophy
+
+
+
+The SMACSS Book explains that what distinguishes state from sub-modules are two things:
+
+1. State may be applied to both `layout` and `module` objects.
+1. State is changeable during the lifetime of the application, dependent on JS (whereas modules are set and do not change). 
+
+We add a third distinction, to further clarify:
+
+3. State is supplemental to modules, in that they are often (perhaps most of the time) module-dependent. In otherwords, state is not entirely meaningful without a module (or layout) context. 
+
+
+For more, see the [SMACSS chapter on state styles](http://smacss.com/book/type-module).
+
+#### State Organization in Truss
+
+Truss' Sass partial organization splits the location of `state` styles into two different areas:
+
+* Generic `state` classes are located in `sass/state/`.
+* Module-dependent `state` classes are located in `sass/modules/`, in their module contexts as nested Sass selectors.
+
+**Generic `state`** classes can be thought of as ignorant of their module contexts, in a similar way as modules are ignorant of their location contexts. 
+
+A real example: `sass/state/_truss_is-hidden.scss`:
+
+```SCSS
+.is-hidden {
+	display: none;
+}
+```
+
+Grouping generic states allows defining them once, allowing modules to share them without having to re-define them, which reduces redundancy.
+
+**Module-specific `state`** classes are unique to a module, or behave uniquely in a module. They should be grouped with their module's definition, as a nested Sass selector. 
+
+A hypothetical example:
+
+
+
+In the unusual event that a module needs to override a generic state class, that is easily done by the same mechanism. 
 
 Getting Started
 ---------------
 
-~~I'll be coming back to this later~~
+_TBD._
 
-### Theme Hook Alliance
----------------
-
-What is Theme Hook Alliance? It's a pretty rad project - https://github.com/zamoose/themehookalliance. I'm a big fan of hooks, personally. They provide a means to keep things within the theme cleaner and easier to maintain.
-
-"_The Theme Hook Alliance is a community-driven effort to agree on a set of third-party action hooks that THA themes pledge to implement in order to give that desired consistency_."
-
-
-### Bourbon and Neat
----------------
-Why use these in this project? It's a philosophical thing. I've used Foundation and Bootstrap before. I like them; they're both great, great projects run by smarter people than myself. So what's the philosophical bit? To achieve the responsiveness required of various projects, I would have to tear up my HTML, input my own selector classes and what have you, in addition to changing my css. I didn't like it. I heard about Neat (http://neat.bourbon.io) and really liked their approach to a grid framework. You keep your HTML structure the way you like and all of the styling in your Sass files
-
-### Use as a Parent Theme?
----------------
-I don't see why not. ~~I haven't done it yet.~~ ( I'm using a child theme on http://alexhasnicehair.com ) But with the addition of Theme Hook Alliance, I'd say 'Some Like it Neat' would make for a good Parent Theme for your project and certainly more ideal if you're going to make significant edits (and why wouldn't you? By default it looks like pooh!).
-
-What I recommend is that you generate your child theme, setup your child theme folder, style.css file. Additionally, I think it's just easier to copy the 'library' folder from the parent and place it into the child theme. 
-
-### Getting Started aka What You Need to Know...
----------------
-Well, to use this theme, you'll definitely want to learn Sass. It's what Bourbon and Neat are built on top of and is at the core of this theme's build. 
 
 Folder Structure
 ---------------
@@ -66,48 +211,34 @@ Folder Structure
       * js
       * sass ( Where all scss files are stored )
     * **languages**
-    * **vendors** ( 3rd party utilities like Theme Hook Alliance, Kirki, TGM Plugin     Activation etc... )
-      * kirki
-      * tgm-plugin-activation
-      * tha-theme-hooks
-      * wp-customizer
+    * **vendors** ( 3rd party utilities like Theme Hook Alliance, TGM Plugin Activation etc... )
   * **page-templates** ( Standard Page Templates for Pages )
       * partials ( Template Parts viea get_template_parts() )
 
 
-### General Credits and Thanks
----------------
-A special thanks to all the folks who inspire me on a daily basis to "do more" with what I know and what I can contribute.
+## Credits
 
-* Brandon Dove
-* Nikhil @techvoltz
-* Jon Brown
-* Jeffrey Zinn
-* Steve Zehngut
-* Chris Lema
-* Se Reed
-* Natalie MacLees
-* Ryan Cowles
-* Nathan Tyler
-* Dave Jesch
-* Devin Walker
-* Blair Williams
-* Robert Neu
-* And a fuckload more that I'm missing here.
+Truss is a project of [Rocket Lift](http://rocketlift.com/), whose team includes:
+* QA engineer Catherine Bridge
+* Support tech Douglas Detrick
+* Lead developer Matthew Eppelsheimer
+* Developer Kevin Lenihan
+* Sysadmin and QA engineer Matt Pearson
 
-License
----------------
+If you are Truss, and/or you'd like to collaborate on its development, please let us know! 
+
+This theme is a fork of Alex Vasquez's [Some Like It Neat]().
+
+
+## Vendor Licenses
+
+
 
 This theme is based on Underscores, (C) 2012-2013 Automattic, Inc.
  - Source: http://underscores.me/
  - License: GNU GPL, Version 2 (or later)
  - License URI: license.txt
  
-Kirki, (C) 2014 Aristeides Stathopoulos, Dimitris Kalliris.
- - Source: http://kirki.org/
- - License: GNU GPL, Version 2 (or later)
- - License URI: license.txt
-
 Flexnav, Copyright 2014 Jason Weaver.
  - Source: http://jasonweaver.name/lab/flexiblenavigation/
  - License: GNU GPL, Version 2 (or later)
@@ -118,11 +249,6 @@ Genericons, Copyright 2013 Automattic, Inc.
  - License: GNU GPL, Version 2 (or later)
  - License URI: /font/license.txt
 
-TGM Plugin Activation, Copyright 2014 Thomas Griffin Media, Inc.
- - Source: http://tgmpluginactivation.com/
- - License: GNU GPL, Version 2 (or later)
- - License URI: http://tgmpluginactivation.com/#license
- 
 Theme Hook Alliance 
  - Source: https://github.com/zamoose/themehookalliance/blob/master/tha-theme-hooks.php
  - License: GNU GPL, Version 2 (or later)
@@ -142,4 +268,3 @@ Hover Intent
  - Source: https://github.com/tristen/hoverintent
  - License: the MIT
  - License URI: license.txt
-
