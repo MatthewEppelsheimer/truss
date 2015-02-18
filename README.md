@@ -258,7 +258,7 @@ Truss is a project of [Rocket Lift](http://rocketlift.com/), whose technical tea
 
 If you are Truss, and/or you'd like to collaborate on its development, please let us know! 
 
-This theme began as a fork of Alex Vasquez's [Some Like It Neat]().
+This theme began as a fork of Alex Vasquez's [Some Like It Neat](http://somelikeitneat.com/).
 
 
 ## Vendor Licenses
