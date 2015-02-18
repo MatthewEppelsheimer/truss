@@ -1,5 +1,8 @@
 As of 2014-10-07, this won't compile. 
 
-I'm working first through the CCLS child theme. Need to stitch things back together to compile correctly here, afterwards.
+Source files are actively developed here, but compiling happens in the CCLS child theme.
+
+After CCLS works, we'll stitch things together here to compile correctly.
 
 - MLE
+
