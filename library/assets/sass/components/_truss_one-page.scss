@@ -1,0 +1,12 @@
+/**
+ * Flexnav single page site with id anchors.
+ *
+ * @group flexnav
+ * @todo consider dropping support for this.
+ */
+.one-page {
+	@media all and (min-width: 800px) {
+		padding-top: 70px;
+	}
+}
+

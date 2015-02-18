@@ -1,5 +1,11 @@
-/* Flexnav Base Styles */
-
+/**
+ * Flexnav Base Styles
+ *
+ * @group flexnav
+ * @todo refactor color variables to eliminate
+ *       `sass/globals/variables/settings/_truss_settings_flexnav_color`.
+ * @todo refactor to use extends.
+ */
 .flexnav {
 	overflow: hidden;
 	margin: 0 auto;
@@ -121,51 +127,10 @@
 			color: #666;
 		}
 	}
-}
 
-.menu-button {
-	position: relative;
-	display: block;
-	padding: 1em;
-	background: $flexnav_color_top_level;
-	color: $flexnav_color_nav_text;
-	cursor: pointer;
-	border-bottom: 1px solid rgba(0,0,0,.2);
-
-	&.one-page {
-		position: fixed;
-		top: 0;
-		right: 5%;
-		padding-right: 45px;
-	}
-
-	.touch-button {
-		background: transparent;
-		position: absolute;
-		z-index: 999;
-		top: 0;
-		right: 0;
-		width: 50px;
-		height: 50px;
-		display: inline-block;
-		text-align: center;
-
-		.navicon {
-			font-size: 16px;
-			position: relative;
-			top: 1em;
-			color: #666;
-		}
-	}
-}
-
-@media all and (min-width: 800px) {
-	body.one-page {
-		padding-top: 70px;
-	}
-
-	.flexnav {
+	@media all and (min-width: 800px) {
 		overflow: visible;
+
 		&.opacity {
 		  opacity: 1;
 		}
@@ -231,98 +196,5 @@
 			}
 		}
 	}
-
-	.menu-button {
-		display: none;
-	}
 }
 
-.oldie {
-	body.one-page {
-		padding-top: 70px;
-	}
-
-	.flexnav {
-		overflow: visible;
-		&.one-page {
-			top: 0;
-			right: auto;
-			max-width: 1080px;
-		}
-		li {
-			position: relative;
-			list-style: none;
-			float: left;
-			display: block;
-			background-color: $flexnav_color_top_level;
-			width: 20%;
-			min-height: 50px;
-			overflow: visible;
-
-			a {
-				border-left: 1px solid #acaca1;
-				border-bottom: none;
-				overflow: visible;
-			}
-		}
-
-		li:hover > ul {
-			display: block;
-			width: 100%;
-			overflow: visible;
-			li {
-				width: 100%;
-				float: none;
-			}
-		}
-
-		li > ul {
-			background:#acaca1;
-			position: absolute;
-			top: auto;
-			left: 0;
-			display: none;
-			z-index: 1;
-			overflow: visible;
-		}
-
-		li ul li ul {
-			top: 0;
-		}
-
-		li ul li a {
-			border-bottom: none;
-		}
-
-		li ul.open {
-			display: block;
-			width: 100%;
-			overflow: visible;
-
-			li {
-				width: 100%;
-			}
-
-			ul.open {
-				margin-left: 100%;
-				top: 0;
-  				display: block;
-				width: 100%;
-				overflow: visible;
-			}
-		}
-
-		ul li:hover ul {
-			margin-left: 100%;
-			top: 0;
-		}
-	}
-
-	.menu-button {
-		display: none;
-	}
-
-	&.ie7 .flexnav li {
-		width: 19.9%;
-	}
-}
