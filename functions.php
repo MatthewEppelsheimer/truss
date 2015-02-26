@@ -246,6 +246,7 @@ require get_template_directory() . '/library/vendors/jetpack.php';
 if ( file_exists( get_stylesheet_directory() . '/required-plugins.php' ) ) {
 	require_once( get_template_directory() . '/library/vendors/tgm-plugin-activation/class-tgm-plugin-activation.php' );
 	require_once( get_stylesheet_directory() . '/required-plugins.php' );
+	add_action( 'tgmpa_register', 'truss_child_register_required_plugins' );
 }
 
 /**
