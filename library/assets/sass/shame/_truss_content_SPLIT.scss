@@ -123,16 +123,14 @@
 	}
 }
 
-#content {
-
-	.entry-content {
-		a, a:visited {
-			border-bottom: solid 1px $primary-color;
-		}
+.entry-content {
+	a, a:visited {
+		border-bottom: solid 1px $primary-color;
 	}
-	.entry-meta {
-		a, a:visited {
-			border-bottom: solid 1px $primary-color;
-		}
+}
+
+.entry-meta {
+	a, a:visited {
+		border-bottom: solid 1px $primary-color;
 	}
 }

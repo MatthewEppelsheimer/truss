@@ -3,7 +3,8 @@
  *
  * Applies to an H1.
  */
- .site-title {
+.site-title {
+	font-family: $title;
 	@include media($sm) {
 		@include fontSize(35px);
 	}
@@ -13,5 +14,4 @@
 	@include media($md) {
 		@include fontSize(75px);
 	}
-	font-family: $title;
 }
