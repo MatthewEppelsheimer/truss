@@ -153,6 +153,17 @@ if ( !function_exists('truss_add_flexnav') ) :
 endif;
 
 /**
+ * Include Truss actions
+ *
+ * Truss isolates nearly every component of html output into
+ * individual functions hooked to actions, so that child theme
+ * developers can surgically modify contents and order of
+ * everything.
+ */
+require_once( 'includes/truss-actions.php' );
+require_once( 'includes/truss-components-head.php' );
+
+/**
  * Including Theme Hook Alliance (https://github.com/zamoose/themehookalliance).
  */
 include( 'library/vendors/tha-theme-hooks/tha-theme-hooks.php' );
