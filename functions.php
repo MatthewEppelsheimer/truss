@@ -162,6 +162,7 @@ endif;
  */
 require_once( 'includes/truss-actions.php' );
 require_once( 'includes/truss-components-head.php' );
+require_once( 'includes/truss-components-header.php' );
 
 /**
  * Including Theme Hook Alliance (https://github.com/zamoose/themehookalliance).

@@ -8,7 +8,7 @@
  */
 ?>
 		<?php tha_content_bottom(); ?>
-		</div><!-- #content -->
+		</div><?php /* .site-content */ ?>
 		<?php tha_content_after(); ?>
    		<?php tha_footer_before(); ?>
 		<footer id="colophon" class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
@@ -16,11 +16,12 @@
 			<div class="site-info">
 				<?php do_action( 'truss_credits' ); ?>
 				<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by <span class="genericon genericon-wordpress"></span> %s', 'truss' ), 'WordPress' ); ?></a>
+			</div>
 			<?php tha_footer_bottom(); ?>
-		</footer><!-- #colophon -->
+		</footer>
 		<?php tha_footer_after(); ?>
-	</div><!-- .wrap -->
-</div><!-- #page -->
+	</div><?php /* .wrap */ ?>
+</div><?php /* .site */ ?>
 
 <?php tha_body_bottom(); ?>
 <?php wp_footer(); ?>
