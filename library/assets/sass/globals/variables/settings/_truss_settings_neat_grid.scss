@@ -1,30 +1,40 @@
-// Neat Overrides
-// $column: 90px;
-// $gutter: 30px;
-// $grid-columns: 12;
-// $max-width: em(1088);
+/**
+ * Settings for Neat grids
+ *
+ * Override these in a child theme.
+ */
 
-// Adding a Visual Grid while you develop. Set to 'true.'
+/**
+ * Visual Grid for development.
+ *
+ * Disabled by default.
+ */
 $visual-grid: false;
 $visual-grid-color: #ccc;
 $visual-grid-index: front;
 $visual-grid-opacity: 0.2;
 
-// Change the grid settings
+/**
+ * Grid settings
+ */
 $column: 90px;
 $gutter: 30px;
 $grid-columns: 12;
 $max-width:em(1140);
 
-// Breakpoints
+/**
+ * Breakpoints
+ */
 $sm: new-breakpoint(min-width 200px 4);
 $smbg: new-breakpoint(min-width 480px 4);
 $md: new-breakpoint(min-width 768px 6);
 $hg: new-breakpoint(min-width 1140px 12);
 
-// Neat Breakpoints
+/**
+ * Neat Breakpoints
+ */
 $medium-screen: em(640);
 $large-screen: em(860);
-
 $medium-screen-up: new-breakpoint(min-width $medium-screen 4);
 $large-screen-up: new-breakpoint(min-width $large-screen 8);
+

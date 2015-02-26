@@ -19,7 +19,7 @@
 %form-text-input {
 	@include box-sizing(border-box);
 	@include transition(border-color);
-	background-color: white;
+	background-color: $form-background-color;
 	border-radius: $form-border-radius;
 	border: 1px solid $form-border-color;
 	box-shadow: $form-box-shadow;
@@ -50,3 +50,4 @@
 	padding-bottom: $base-line-height / 3;
 	width: 100%;
 }
+
