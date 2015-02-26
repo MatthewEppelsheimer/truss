@@ -5,11 +5,11 @@
  * @package truss
  */
 
-add_action( 'truss_head', 'truss_meta_charset', 10 );
-add_action( 'truss_head', 'truss_meta_viewport', 20 );
-add_action( 'truss_head', 'truss_title', 30 );
-add_action( 'truss_head', 'truss_meta_profile', 40 );
-add_action( 'truss_head', 'truss_meta_pingback', 50 );
+add_action( 'truss_head', 'truss_meta_charset', 100 );
+add_action( 'truss_head', 'truss_meta_viewport', 200 );
+add_action( 'truss_head', 'truss_title', 300 );
+add_action( 'truss_head', 'truss_meta_profile', 400 );
+add_action( 'truss_head', 'truss_meta_pingback', 500 );
 
 /**
  * Charset Meta
@@ -57,7 +57,7 @@ function truss_title(){ ?>
  * @package truss
  * @since 1.0
  */
-function truss_meta_profile(){ ?>
+	function truss_meta_profile(){ ?>
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 <?php }
 
