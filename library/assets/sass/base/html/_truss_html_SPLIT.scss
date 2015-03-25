@@ -1,0 +1,131 @@
+/* @TODO
+ *
+ * Each of the below rule blocks need to be broken up into individual files.
+ *    - place files in same directory as this file
+ *    - tab spacing
+ *    - empty line at end of file
+ *    - Does not apply to rule blocks above this TODO block (if any).
+ *    - If, after this is complete, this file is empty, delete it.
+ *    - If, after this is complete, this file is NOT empty, then relocate it
+ *      up one directory, and remove "SPLIT" from its file name
+ */
+
+h1 {
+	@extend %h1;
+}
+
+h2 {
+	@extend %h2;
+}
+
+h3 {
+	@extend %h3;
+}
+
+h4 {
+	@extend %h4;
+}
+
+h5 {
+	@extend %h5;
+}
+
+h6 {
+	@extend %h6;
+}
+
+p {
+	@extend %p;
+}
+
+a {
+	@extend %a;
+}
+
+hr {
+	@extend %hr;
+}
+
+img {
+	@extend %img;
+}
+
+blockquote {
+	@extend %blockquote;
+}
+
+cite {
+	@extend %cite;
+}
+
+a {
+	@extend %a;
+}
+
+a:visited {
+	@extend %a;
+}
+
+embed {
+	@extend %embed;
+}
+
+iframe {
+	@extend %iframe;
+}
+
+object {
+	@extend %object;
+}
+
+#{$all-text-inputs} {
+	@extend %form-text-input;	
+}
+
+fieldset {
+	@extend %fieldset;
+}
+
+label {
+	@extend %form-input-base;
+}
+
+label {
+	@extend %label;
+}
+
+textarea {
+	@extend %textarea;
+}
+
+input {
+	@extend %input;
+}
+
+input[type="submit"] {
+	@extend %button;
+}
+
+input[type="search"] {
+	@include appearance(none);
+}
+
+input[type="checkbox"] {
+	@extend %form-input-selection-type;
+}
+
+input[type="radio"] {
+	@extend %form-input-selection-type;
+}
+
+input[type="file"] {
+	@extend %form-input-file-type;
+}
+
+select {
+	@extend %select;
+}
+
+select[multiple=multiple] {
+	@extend %form-text-input;
+}

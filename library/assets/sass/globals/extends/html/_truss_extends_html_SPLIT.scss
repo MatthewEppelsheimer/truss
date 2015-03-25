@@ -1,0 +1,72 @@
+/* @TODO
+ *
+ * Each of the below rule blocks need to be broken up into individual files.
+ *    - place files in same directory as this file
+ *    - tab spacing
+ *    - empty line at end of file
+ *    - Does not apply to rule blocks above this TODO block (if any).
+ *    - If, after this is complete, this file is empty, delete it.
+ *    - If, after this is complete, this file is NOT empty, then relocate it
+ *      up one directory, and remove "SPLIT" from its file name
+ */
+
+%hr {
+	border-bottom: 1px solid $base-border-color;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	margin: $base-line-height 0;
+}
+
+%img {
+	margin: 0;
+	max-width: 100%;
+}
+
+%embed {
+	max-width: 100%;
+}
+
+%iframe {
+	max-width: 100%;
+}
+
+%object {
+	max-width: 100%;
+}
+
+%fieldset {
+	background: lighten($base-border-color, 10);
+	border: 1px solid $base-border-color;
+	margin: 0 0 ($base-line-height / 2) 0;
+	padding: $base-line-height;
+}
+
+%label {
+	font-weight: bold;
+	margin-bottom: $base-line-height / 4;
+	
+	&.required:after {
+		content: "*";
+	}
+	
+	abbr {
+		display: none;
+	}
+}
+
+%input {
+	@extend %form-input-base;
+}
+
+%textarea {
+	@extend %form-text-input;
+	resize: vertical;
+}
+
+%select {
+	@extend %form-input-base;
+	margin-bottom: $base-line-height;
+	max-width: 100%;
+	width: auto;
+}

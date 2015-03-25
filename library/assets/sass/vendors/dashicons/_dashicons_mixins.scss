@@ -1,0 +1,10 @@
+/* =Genericons and Dashicons
+-------------------------------------------------------------- */
+@mixin dashicons {
+	color: $icon-color;
+	display: inline-block;
+	-webkit-font-smoothing: antialiased;
+	font: normal 16px/1 'Dashicons';
+	vertical-align: middle;
+}
+

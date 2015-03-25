@@ -1,0 +1,136 @@
+/* @TODO
+ *
+ * Each of the below rule blocks need to be broken up into individual files.
+ *    - place files in components/wordpress-content/
+ *    - tab spacing
+ *    - empty line at end of each file
+ *    - Does not apply to rule blocks above this TODO block (if any).
+ *    - This file shoudl be empty when done; delete it.
+ */
+
+.byline {
+	display: none;
+
+	.single &, .group-blog & {
+		display: inline;
+	}
+}
+
+.updated {
+	display: none;
+}
+
+.page-content {
+	margin: 1.5em 0 0;
+}
+
+.entry-content {
+	margin: 1.5em 0 0;
+}
+
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+.aligncenter {
+	@include clearfix;
+	float: none;
+	margin-top: .5em;
+	margin-right: auto;
+	margin-bottom: .5em;
+	margin-left: auto;
+}
+
+.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 1.5em;
+}
+
+#breadcrumbs {
+	@include fontSize(14px);
+	font-family: $content;
+	padding: 20px 0 20px 50px;
+
+	a, a:visited {
+		border-bottom: solid 1px $primary-color;
+	}
+}
+
+/* @todo Test to make sure this original specificity isn't needed:
+.page-content img.wp-smiley,
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+*/
+.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+
+.wp-caption {
+	border: 1px solid #ccc;
+	clear: both;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+		display: block;
+		margin: 1.2% auto 0;
+		max-width: 98%;
+	}
+
+	.wp-caption-text {
+		text-align: center;
+		margin: 0.8075em 0;
+	}
+
+}
+
+.site-main {
+	.gallery {
+		margin-bottom: 1.5em;
+	}
+
+	.gallery {
+		a img {
+			border: none;
+			height: auto;
+			max-width: 90%;
+		}
+
+		dd {
+			margin: 0;
+		}
+	}
+}
+
+.comment-content {
+	a {
+		word-wrap: break-word;
+	}
+}
+
+.entry-content {
+	a, a:visited {
+		border-bottom: solid 1px $primary-color;
+	}
+}
+
+.entry-meta {
+	a, a:visited {
+		border-bottom: solid 1px $primary-color;
+	}
+}
