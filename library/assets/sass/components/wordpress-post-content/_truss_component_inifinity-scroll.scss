@@ -1,0 +1,18 @@
+.infinite-scroll {
+	.paging-navigation { /* Hide Older/Newer posts navigation */
+		display: none;
+	}
+
+	&.neverending {
+		.site-footer { /* hide Theme Footer */
+			display: none;
+		}
+	}
+}
+
+/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before */
+.infinity-end.neverending {
+	.site-footer {
+		display: block;
+	}
+}

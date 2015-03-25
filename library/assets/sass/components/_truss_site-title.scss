@@ -1,0 +1,17 @@
+/**
+ * Site Title
+ *
+ * Applies to an H1.
+ */
+.site-title {
+	font-family: $title;
+	@include media($sm) {
+		@include fontSize(35px);
+	}
+	@include media($smbg) {
+		@include fontSize(55px);
+	}
+	@include media($md) {
+		@include fontSize(75px);
+	}
+}
