@@ -1,4 +1,5 @@
 .site {
 	 @include outer-container;
-}
 
+	 overflow: hidden;
+}
