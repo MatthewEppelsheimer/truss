@@ -1,0 +1,112 @@
+/*
+Theme Name:     Truss Starter Child Theme
+Theme URI:      https://rocketlift.com/
+Description:    A starter child theme for the Truss parent theme framework.
+Author:         Matthew Eppelsheimer and Rocket Lift
+Author URI:     http://rocketlift.com/
+Template:       truss
+Version:        0.1.0
+*/
+/* Parent Global Frameworks */
+/* No files to import found in ../../../../truss/library/assets/sass/globals/frameworks/**\/* */
+/* Parent Global Variables */
+/* No files to import found in ../../../../truss/library/assets/sass/globals/variables/**\/* */
+/* Global Variables */
+/**
+ * Color Definitions
+ *
+ * @package ccls2
+ */
+/* Not yet updated */
+/**
+ * Neat Overrides
+ *
+ * @package truss-child
+ */
+/**
+ * Visual Grid for development.
+ *
+ * To use, uncomment and set to true.
+ */
+/**
+ * Grid settings
+ *
+ * To use, uncomment and adjust as needed.
+ */
+/*
+$column: 90px;
+$gutter: 30px;
+$grid-columns: 12;
+$max-width:em(1140);
+*/
+/* Parent Global Functions */
+/* No files to import found in ../../../../truss/library/assets/sass/globals/functions/* */
+/* Global Functions */
+/* No files to import found in globals/functions/**\/* */
+/* Parent Global Mixins */
+/* No files to import found in ../../../../truss/library/assets/sass/globals/mixins/**\/* */
+/* Global Mixins */
+/* No files to import found in globals/mixins/**\/* */
+/* Parent Global Extends */
+/* No files to import found in ../../../../truss/library/assets/sass/globals/extends/**\/* */
+/* Global Extends */
+/* No files to import found in globals/extends/**\/* */
+/* Parent Base */
+/* No files to import found in ../../../../truss/library/assets/sass/base/**\/* */
+/* Base */
+/**
+ * Body
+ */
+/* line 4, library/assets/sass/base/_body.scss */
+body {
+  border-top: 3px solid #ba5c26;
+}
+
+/* Parent Layout */
+/* No files to import found in ../../../../truss/library/assets/sass/layout/**\/* */
+/* Layout */
+/* No files to import found in layout/**\/* */
+/* Parent Components */
+/* No files to import found in ../../../../truss/library/assets/sass/components/**\/* */
+/* Components */
+/**
+ * Phone number in header
+ *
+ * Includes a "tel:" link
+ *
+ * @package ccls2
+ * @since 1.0.0
+ */
+/* line 9, library/assets/sass/components/_ccls-call-us.scss */
+.ccls-call-us {
+  font-style: italic;
+  color: #cd6a31;
+}
+/* line 13, library/assets/sass/components/_ccls-call-us.scss */
+.ccls-call-us a {
+  color: inherit;
+}
+
+/* line 1, library/assets/sass/components/_site-title.scss */
+.site-title {
+  padding: 0;
+  margin: 0;
+  width: 198px;
+  height: 54px;
+  color: #999;
+  background-image: url("library/assets/images/logo-ccls.gif");
+  text-indent: -999em;
+}
+/* line 12, library/assets/sass/components/_site-title.scss */
+.site-title a {
+  display: block;
+  width: inherit;
+  height: inherit;
+}
+
+/* Parent State */
+/* No files to import found in ../../../../truss/library/assets/sass/state/* */
+/* State */
+/* No files to import found in state/* */
+/* Parent Shame */
+/* No files to import found in ../../../../truss/library/assets/sass/shame/* */
