@@ -1,0 +1,17 @@
+.site-title {
+	padding:0;
+	margin:0;
+	width:198px;
+	height:54px;
+
+	color: $color-gray-medium;
+	background-image:url("library/assets/images/logo-ccls.gif");
+
+	text-indent:-999em;
+
+	a {
+		display: block;
+		width: inherit;
+		height: inherit;
+	}
+}

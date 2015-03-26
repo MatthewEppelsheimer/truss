@@ -1,0 +1,24 @@
+// Font Colors
+$base-font-color: $color-gray-dark;
+$base-accent-color: $color-blue;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+
+// Border color
+$base-border-color: $color-gray-light;
+
+// Miscellaneous
+/* @TODO set these to variables */
+$icon-color: #ff0000;
+$primary-color: #ff0000;
+
+// Flash Color Settings
+$alert-color: $color-yellow-light;
+$error-color: $color-red-light;
+$notice-color: lighten($base-accent-color, 40);
+$success-color: $color-green-light;
+

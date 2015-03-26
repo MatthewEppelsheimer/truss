@@ -1,0 +1,47 @@
+/**
+ * Flexnav menu show/hide button
+ *
+ * @group flexnav
+ * @todo consider working with other button classes.
+ * @todo refactor to use an extend.
+ */
+.menu-button {
+	position: relative;
+	display: block;
+	padding: 1em;
+	background: $flexnav_color_top_level;
+	color: $flexnav_color_nav_text;
+	cursor: pointer;
+	border-bottom: 1px solid rgba(0,0,0,.2);
+
+	&.one-page {
+		position: fixed;
+		top: 0;
+		right: 5%;
+		padding-right: 45px;
+	}
+
+	.touch-button {
+		background: transparent;
+		position: absolute;
+		z-index: 999;
+		top: 0;
+		right: 0;
+		width: 50px;
+		height: 50px;
+		display: inline-block;
+		text-align: center;
+
+		.navicon {
+			font-size: 16px;
+			position: relative;
+			top: 1em;
+			color: #666;
+		}
+	}
+
+	@media all and (min-width: 800px) {
+		display: none;
+	}
+}
+

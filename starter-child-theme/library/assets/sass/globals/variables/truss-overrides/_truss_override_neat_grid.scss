@@ -1,0 +1,28 @@
+/**
+ * Neat Overrides
+ *
+ * @package truss-child
+ */
+
+/**
+ * Visual Grid for development.
+ *
+ * To use, uncomment and set to true.
+ */
+$visual-grid: true;
+$visual-grid-color: #ccc;
+$visual-grid-index: front;
+$visual-grid-opacity: 0.2;
+
+/**
+ * Grid settings
+ *
+ * To use, uncomment and adjust as needed.
+ */
+/*
+$column: 90px;
+$gutter: 30px;
+$grid-columns: 12;
+$max-width:em(1140);
+*/
+
