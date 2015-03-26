@@ -6,7 +6,7 @@
 		text-align: left;
 	}
 
-	#primary {
+	.primary-content {
 		@include media($sm) {
 			float: left !important;
 			@include media($sm) {
