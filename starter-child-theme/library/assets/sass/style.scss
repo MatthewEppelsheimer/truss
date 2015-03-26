@@ -1,0 +1,56 @@
+/*
+Theme Name:     Truss Starter Child Theme
+Theme URI:      https://rocketlift.com/
+Description:    A starter child theme for the Truss parent theme framework.
+Author:         Matthew Eppelsheimer and Rocket Lift
+Author URI:     http://rocketlift.com/
+Template:       truss
+Version:        0.1.0
+*/
+
+/* Parent Global Frameworks */
+@import '../../../../truss/library/assets/sass/globals/frameworks/**/*';
+
+/* Parent Global Variables */
+@import '../../../../truss/library/assets/sass/globals/variables/**/*';
+/* Global Variables */
+@import 'globals/variables/**/*';
+
+/* Parent Global Functions */
+@import '../../../../truss/library/assets/sass/globals/functions/*';
+/* Global Functions */
+@import 'globals/functions/**/*';
+
+/* Parent Global Mixins */
+@import '../../../../truss/library/assets/sass/globals/mixins/**/*';
+/* Global Mixins */
+@import 'globals/mixins/**/*';
+
+/* Parent Global Extends */
+@import '../../../../truss/library/assets/sass/globals/extends/**/*';
+/* Global Extends */
+@import 'globals/extends/**/*';
+
+/* Parent Base */
+@import '../../../../truss/library/assets/sass/base/**/*';
+/* Base */
+@import 'base/**/*';
+
+/* Parent Layout */
+@import '../../../../truss/library/assets/sass/layout/**/*';
+/* Layout */
+@import 'layout/**/*';
+
+/* Parent Components */
+@import '../../../../truss/library/assets/sass/components/**/*';
+/* Components */
+@import 'components/**/*';
+
+/* Parent State */
+@import '../../../../truss/library/assets/sass/state/*';
+/* State */
+@import 'state/*';
+
+/* Parent Shame */
+@import '../../../../truss/library/assets/sass/shame/*';
+

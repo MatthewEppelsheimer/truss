@@ -1,0 +1,16 @@
+/**
+ * Phone number in header
+ *
+ * Includes a "tel:" link
+ *
+ * @package ccls2
+ * @since 1.0.0
+ */
+.ccls-call-us {
+	font-style: italic;
+	color: $color-orange-medium;
+
+	a {
+		color: inherit;
+	}
+}
