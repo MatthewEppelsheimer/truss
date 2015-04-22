@@ -5,10 +5,11 @@
  * Contains the closing of the #content div and all content after
  *
  * @package truss
+ * @todo confirm `tha_body_bottom()` should come before `wp_footer()`.
  */
 ?>
-		<?php tha_content_bottom(); ?>
-		</div><?php /* .site-content */ ?>
+			<?php tha_content_bottom(); ?>
+		</main>
 		<?php tha_content_after(); ?>
 
    		<?php tha_footer_before(); ?>

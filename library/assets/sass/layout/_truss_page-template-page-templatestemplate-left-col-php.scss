@@ -5,7 +5,7 @@
 		margin: 0;
 		text-align: left;
 	}
-	#primary {
+	.site-main {
 		float: right !important;
 		@include media($sm) {
 			@include span-columns(4);
