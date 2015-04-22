@@ -308,20 +308,6 @@ if ( !function_exists('truss_mobile_styles') ) :
 	add_action('wp_head', 'truss_mobile_styles' );
 endif;
 
-if ( !function_exists('truss_add_footer_divs') ) :
-	function truss_add_footer_divs() { ?>
-
-		<div class="footer-left">
-			 <?php echo get_theme_mod( 'truss_footer_left' ); ?>
-
-		</div>
-		<div class="footer-right">
-			<?php echo get_theme_mod( 'truss_footer_right' ); ?>
-		</div>
-<?php }
-add_action( 'tha_footer_bottom', 'truss_add_footer_divs' );
-endif;
-
 add_action( 'tha_head_bottom', 'truss_add_selectivizr' );
 function truss_add_selectivizr() { ?>
 	<!--[if (gte IE 6)&(lte IE 8)]>
