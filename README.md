@@ -38,6 +38,8 @@ At a glance, Truss uses:
 
 * [TGM Plugin Activation](#) to recommend and require plugins
 
+* [Sassdoc](/) documentation of Sass variables, mixins, and placeholders, available at [trusstheme.com/sass](https://trusstheme.com/sass/).
+
 ### Browser Support
 
 Truss takes a progressive enhancement approach, meaning that baseline support is guaranteed for an arbitrary list of older browsers, and enhanced CSS is served to newer browsers based on capatilbitiy detection.
@@ -247,6 +249,27 @@ Folder Structure
   * **page-templates** ( Standard Page Templates for Pages )
       * partials ( Template Parts via get_template_parts() )
 
+## Maintainting Documentation
+
+### Sassdoc
+
+Sass documentation is available at [trusstheme.com/sass](https://trusstheme.com/sass/). This is compiled using [Sassdoc](http://sassdoc.com/). 
+
+To compile, run: `$ sassdoc library/assets/sass/`
+
+You may optionally control the directory name where generated documentation site files are output by passing a `dest` argument. This example will place output in directory `foo/`. 
+
+```
+$ sassdoc library/assets/sass/ --dest=foo
+```
+
+Note that running this command is a destructive operation to anything already in the destination directory.
+
+For more on using Sassdoc, run `$ sassdoc --help` or visit [sassdoc.com](http://sassdoc.com/).
+
+### This README file
+
+You're reading it right now. Be sure to keep this up to date as Truss grows and changes.
 
 ## Credits
 
