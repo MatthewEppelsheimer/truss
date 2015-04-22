@@ -163,6 +163,8 @@ endif;
 require_once( 'includes/truss-actions.php' );
 require_once( 'includes/truss-components-head.php' );
 require_once( 'includes/truss-components-header.php' );
+require_once( 'includes/truss-components-site-credits.php');
+require_once( 'includes/truss-components-footer.php');
 
 /**
  * Including Theme Hook Alliance (https://github.com/zamoose/themehookalliance).

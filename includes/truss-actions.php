@@ -22,3 +22,14 @@ function truss_head(){
 function truss_header(){
 	do_action( 'truss_header' );
 }
+
+/**
+ * Output main <footer> components
+ *
+ * @package truss
+ * @since 1.0.0
+ */
+function truss_footer(){
+    do_action( 'truss_footer' );
+}
+
