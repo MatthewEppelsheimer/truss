@@ -255,11 +255,9 @@ Folder Structure
 
 Documentation for Truss' Sass library is available at [trusstheme.com/sass](https://trusstheme.com/sass/). This is compiled from comments in our Sass sourcecode, using [Sassdoc](http://sassdoc.com/). 
 
-For more on using Sassdoc, run `$ sassdoc --help` or visit [sassdoc.com](http://sassdoc.com/).
-
 #### Making inline annotations for Sassdoc
 
-As you add and edit Sass, document it inline to include it automatically at compile time, using Sassdoc. 
+**As you add and edit Sass, document it inline to include it automatically at compile time, using Sassdoc.**
 
 Each Sassdoc block line must begin with `/// `. C-style comment blocks (`/**`) and lines with only two slashes will not compile.
 
@@ -287,7 +285,9 @@ Here is the complete list of [Sassdoc Annotations](http://sassdoc.com/annotation
 
 #### Compiling Sassdoc
 
-To compile, run `$ sassdoc library/assets/sass/` and watch for errors.
+Install `sassdoc` from the `npm` repository. `$ npm install sassdoc -g` will install it globally on your system.
+
+To compile, switch to Truss' project root and run `$ sassdoc library/assets/sass/`. Be sure to note any errors.
 
 You may optionally control the directory name where generated documentation site files are output by passing a `dest` argument. This example will place output in directory `foo/`, which should be load immediately in a browser. 
 
@@ -295,8 +295,11 @@ You may optionally control the directory name where generated documentation site
 $ sassdoc library/assets/sass/ --dest=foo
 ```
 
+We use the default `sassdoc/` output directory for this project, and it is included in the `.gitignore` file. **So you can (and should) safely compile at will after adding or editing Sass documentation, to test your changes.**
+
 Note that running this command is a destructive operation to anything already in the destination directory.
 
+For more on using Sassdoc, run `$ sassdoc --help` or visit [sassdoc.com](http://sassdoc.com/).
 
 ### This README file
 
