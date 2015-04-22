@@ -253,11 +253,43 @@ Folder Structure
 
 ### Sassdoc
 
-Sass documentation is available at [trusstheme.com/sass](https://trusstheme.com/sass/). This is compiled using [Sassdoc](http://sassdoc.com/). 
+Documentation for Truss' Sass library is available at [trusstheme.com/sass](https://trusstheme.com/sass/). This is compiled from comments in our Sass sourcecode, using [Sassdoc](http://sassdoc.com/). 
 
-To compile, run: `$ sassdoc library/assets/sass/`
+For more on using Sassdoc, run `$ sassdoc --help` or visit [sassdoc.com](http://sassdoc.com/).
 
-You may optionally control the directory name where generated documentation site files are output by passing a `dest` argument. This example will place output in directory `foo/`. 
+#### Making inline annotations for Sassdoc
+
+As you add and edit Sass, document it inline to include it automatically at compile time, using Sassdoc. 
+
+Each Sassdoc block line must begin with `/// `. C-style comment blocks (`/**`) and lines with only two slashes will not compile.
+
+```css
+/// Here is the description
+/// On several lines if you like
+///
+/// @example
+///   4 + 2 = 8
+///   4 / 2 = 2
+///
+/// @example scss - Clamp function
+///   clamp(42, $min: 13, $max: 37)
+///   // 37
+///
+/// @group truss
+/// @author Matthew Eppelsheimer
+/// @since 0.1
+%some-placeholder {
+	display: block;
+}
+```
+
+Here is the complete list of [Sassdoc Annotations](http://sassdoc.com/annotations//). 
+
+#### Compiling Sassdoc
+
+To compile, run `$ sassdoc library/assets/sass/` and watch for errors.
+
+You may optionally control the directory name where generated documentation site files are output by passing a `dest` argument. This example will place output in directory `foo/`, which should be load immediately in a browser. 
 
 ```
 $ sassdoc library/assets/sass/ --dest=foo
@@ -265,7 +297,6 @@ $ sassdoc library/assets/sass/ --dest=foo
 
 Note that running this command is a destructive operation to anything already in the destination directory.
 
-For more on using Sassdoc, run `$ sassdoc --help` or visit [sassdoc.com](http://sassdoc.com/).
 
 ### This README file
 
