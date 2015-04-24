@@ -28,20 +28,8 @@ add_action( 'truss_entry', 'truss_entry_footer', 500 );
  */
 function truss_entry_header(){ ?>
 	<header class="<?php echo apply_filters( 'truss_class_entry-header', 'entry-header' ); ?>">
-		<h1 class="<?php echo apply_filters( 'truss_class_entry-title', 'entry-title' ); ?>" itemprop="name" >
-			// Wrapping post title in a permalink is a filterable default
-			<?php if ( apply_filters( 'truss_wrap_entry-title_in_permalink', true ) ) { ?>
-				<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-			<?php } else { the_title(); } ?>
-		</h1>
-
-		<?php if ( 'post' == get_post_type() ) : ?>
-			<div class="entry-header-meta">
-			<span class="genericon genericon-time"></span> <?php truss_posted_on(); ?>
-			<span itemprop="dateModified" style="display:none;">Last modified: <?php the_modified_date(); ?></span>
-			</div><?php /* .entry-meta */ ?>
-		<?php endif; ?>
-	</header><?php /* .entry-header */ ?>
+		<?php truss_entry_header_inside(); ?>
+	</header>
 <?php }
 
 /**

@@ -42,3 +42,13 @@ function truss_footer(){
 function truss_entry() {
 	do_action( 'truss_entry' );
 }
+
+/**
+ * Output entry header contents inside <header> wrapper
+ *
+ * @package truss
+ * @since 1.0.0
+ */
+function truss_entry_header_inside() {
+	do_action( 'truss_entry_header_inside' );
+}
