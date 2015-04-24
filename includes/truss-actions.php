@@ -44,11 +44,24 @@ function truss_entry() {
 }
 
 /**
- * Output entry header contents inside <header> wrapper
+ * Output entry header contents.
+ *
+ * Use inside a pre-existing wrapper (typically <header>)
  *
  * @package truss
  * @since 1.0.0
  */
 function truss_entry_header_inside() {
 	do_action( 'truss_entry_header_inside' );
+}
+
+/**
+ * Output entry header meta contents.
+ *
+ * Use inside a pre-existing wrapper (typically <div>).
+ *
+ * @package truss
+ */
+function truss_entry_header_meta_inside() {
+	do_action( 'truss_entry_header_meta_inside' );
 }

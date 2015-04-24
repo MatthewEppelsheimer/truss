@@ -168,6 +168,7 @@ require_once( 'includes/truss-components-header.php' );
 
 require_once( 'includes/truss-components-entry.php' );
 require_once( 'includes/truss-components-entry-header.php' );
+require_once( 'includes/truss-components-entry-header-meta.php' );
 
 require_once( 'includes/truss-components-footer.php');
 require_once( 'includes/truss-components-site-credits.php');

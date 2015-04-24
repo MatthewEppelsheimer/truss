@@ -20,34 +20,39 @@ add_action( 'truss_entry_header_inside', 'truss_entry_header_meta', 500 );
  * @package truss
  * @since 1.0
  */
-function truss_entry_header_title() {
+function truss_entry_header_title() { ?>
 	<h1 class="<?php echo apply_filters( 'truss_class_entry-title', 'entry-title' ); ?>" itemprop="name" >
+		<?php
 		// Wrapping post title in a permalink is a filterable default
-		<?php if ( apply_filters( 'truss_wrap_entry-title_in_permalink', true ) ) { ?>
+		if ( apply_filters( 'truss_wrap_entry-title_in_permalink', true ) ) { ?>
 			<a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a>
-		<?php } else { the_title(); } ?>
+		<?php } else {
+			the_title();
+		} ?>
 	</h1>
 <?php
 }
 
 /**
- * Display post title
+ * Display post header meta info
  *
- * Render a post's title in an <h1>. Intended to be hooked to
- * `truss_entry_header_inside`, to run inside a <header> tag in The Loop.
+ * Create a wrapper div and call the `truss_entry_header_meta_inside`
+ * action. Don't display if this isn't a post, or if its contents will be
+ * empty. Intended to be hooked to `truss_entry_header_inside`, to run
+ * inside a <header> tag in The Loop.
  *
- * @todo migrate inner contents of the div into its own component action hook
  * @todo make class filterable
- * @todo reconsider the contional wrapper for when this should run
+ * @todo reconsider the get_post_type conditional
  *
  * @package truss
  * @since 1.0
  */
 function truss_entry_header_meta() {
-	if ( 'post' == get_post_type() ) { ?>
+	// Only display div for posts
+	// Don't display div if its contents will be empty
+	if ( 'post' == get_post_type() && has_filter( 'truss_entry_header_meta_inside' ) ) { ?>
 		<div class="entry-header-meta">
-			<span class="genericon genericon-time"></span> <?php truss_posted_on(); ?>
-			<span itemprop="dateModified" style="display:none;">Last modified: <?php the_modified_date(); ?></span>
+			<?php truss_entry_header_meta_inside(); ?>
 		</div>
 	<?php }
 }
