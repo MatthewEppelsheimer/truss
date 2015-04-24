@@ -35,9 +35,6 @@ function truss_entry_header(){ ?>
  * `truss_show_entry_summary`. Intended to be hooked to
  * `truss_entry`, to run inside an <article> tag.
  *
- * @todo add filters
- * @todo document filters
- *
  * @package truss
  * @since 1.0
  */
@@ -47,7 +44,7 @@ function truss_entry_summary() {
 		return;
 	} ?>
 
-	<div class="entry-summary" itemprop="description">
+	<div class="<?php echo apply_filters( 'truss_class_entry-summary', 'entry-summary' ); ?>" itemprop="description">
 		<?php the_excerpt(); ?>
 	</div>
 <?php
@@ -58,8 +55,6 @@ function truss_entry_summary() {
  *
  * Render a post's content. Intended to be hooked to `truss_entry`,
  * to run inside an <article> tag in The Loop.
- *
- * @todo add filters
  *
  * @package truss
  * @since 1.0
@@ -79,7 +74,7 @@ function truss_entry_content() {
 		return;
 	} ?>
 
-	<div class="entry-content" itemprop="articleBody">
+	<div class="<?php echo apply_filters( 'truss_class_entry-content', 'entry-content' ); ?>" itemprop="articleBody">
 		<?php
 		the_content(
 			apply_filters(
@@ -116,8 +111,6 @@ function truss_entry_pagination() {
  * Render a post's <footer>. Intended to be hooked to `truss_entry`,
  * to run inside an <article> tag in The Loop.
  *
- * @todo add filters
- *
  * @uses truss_entry_footer_inside()
  * @package truss
  * @since 1.0
@@ -125,7 +118,7 @@ function truss_entry_pagination() {
 function truss_entry_footer() {
 	// Only display the <footer> if it will not be empty
 	if ( has_filter( 'truss_entry_footer_inside' ) ) { ?>
-		<footer class="entry-meta" itemprop="keywords">
+		<footer class="<?php echo apply_filters( 'truss_class_entry-meta', 'entry-meta' ); ?>" itemprop="keywords">
 			<?php truss_entry_footer_inside(); ?>
 		</footer>
 	<?php }

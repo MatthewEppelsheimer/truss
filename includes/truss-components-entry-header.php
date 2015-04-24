@@ -41,7 +41,6 @@ function truss_entry_header_title() { ?>
  * empty. Intended to be hooked to `truss_entry_header_inside`, to run
  * inside a <header> tag in The Loop.
  *
- * @todo make class filterable
  * @todo reconsider the get_post_type conditional
  *
  * @package truss
@@ -51,7 +50,7 @@ function truss_entry_header_meta() {
 	// Only display div for posts
 	// Don't display div if its contents will be empty
 	if ( 'post' == get_post_type() && has_filter( 'truss_entry_header_meta_inside' ) ) { ?>
-		<div class="entry-header-meta">
+		<div class="<?php echo apply_filters( 'truss_class_entry-header-meta', 'entry-header-meta' ); ?>">
 			<?php truss_entry_header_meta_inside(); ?>
 		</div>
 	<?php }
