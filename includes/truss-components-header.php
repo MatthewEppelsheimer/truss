@@ -38,6 +38,8 @@ function truss_site_description() { ?>
  *
  * Output primary-nav menu
  *
+ * @todo consider filtering menu-button class
+ *
  * @package truss
  * @since 1.0.0
  */
@@ -46,10 +48,9 @@ function truss_primary_nav() { ?>
 		<div class="menu-button"><span><?php echo get_theme_mod( 'neat_mobile_nav_label' ); ?></span></div>
 		<?php 	wp_nav_menu( array(
 			    'theme_location' => 'primary-navigation',
-			    'menu_class' => 'flexnav', //Adding the class for FlexNav
-			    'items_wrap' => '<ul data-breakpoint="'.  get_theme_mod( 'flexnav_breakpoint', '800' ) .'" id="%1$s" class="%2$s">%3$s</ul>', // Adding data-breakpoint for FlexNav
+			    'menu_class' => 'flexnav', //Add the class for FlexNav
+			    'items_wrap' => '<ul data-breakpoint="'.  get_theme_mod( 'flexnav_breakpoint', '800' ) .'" id="%1$s" class="%2$s">%3$s</ul>', // Add data-breakpoint for FlexNav
 			    ));
 		?>
-
-	</nav><!-- #site-navigation -->
+	</nav>
 <?php }

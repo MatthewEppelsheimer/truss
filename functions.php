@@ -2,6 +2,7 @@
 /**
  * truss functions and definitions
  *
+ * @todo refactor using Genesis' `require_once` pattern to allow child themes freedom to use the framework immediately.
  * @package truss
  */
 
@@ -161,10 +162,20 @@ endif;
  * everything.
  */
 require_once( 'includes/truss-actions.php' );
+
 require_once( 'includes/truss-components-head.php' );
 require_once( 'includes/truss-components-header.php' );
-require_once( 'includes/truss-components-site-credits.php');
+require_once( 'includes/truss-components-entry.php' );
 require_once( 'includes/truss-components-footer.php');
+
+require_once( 'includes/truss-components-site-credits.php');
+
+/**
+ * Include Truss filter functions
+ *
+ * Pre-defined functions hooked to Truss filters.
+ */
+require_once( 'includes/truss-filters.php' );
 
 /**
  * Including Theme Hook Alliance (https://github.com/zamoose/themehookalliance).
