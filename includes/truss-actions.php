@@ -2,6 +2,7 @@
 /**
  * Template functions that fire Truss actions
  *
+ * @todo These are template tags. Rename and/or move this file and its contents accordingly.
  */
 
 /**
