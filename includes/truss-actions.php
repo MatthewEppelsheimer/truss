@@ -34,6 +34,16 @@ function truss_footer(){
 }
 
 /**
+ * Output The Loop
+ *
+ * @package truss
+ * @since 1.0.0
+ */
+function truss_loop() {
+	do_action( 'truss_loop' );
+}
+
+/**
  * Output entry contents inside <article> wrapper
  *
  * @package truss
