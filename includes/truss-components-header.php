@@ -30,7 +30,7 @@ function truss_site_title() { ?>
  * @since 1.0.0
  */
 function truss_site_description() { ?>
-	<h2 class="site-description"><?php bloginfo( 'description' ) ?></h2>
+	<h2 class="<?php echo apply_filters( 'truss_class_site-description', 'site-description' ); ?>"><?php bloginfo( 'description' ) ?></h2>
 <?php }
 
 /**
