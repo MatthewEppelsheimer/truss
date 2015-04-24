@@ -155,13 +155,20 @@ endif;
 
 /**
  * Include Truss actions
+ */
+require_once( 'includes/truss-actions.php' );
+
+/**
+ * Include Truss components
  *
  * Truss isolates nearly every component of html output into
  * individual functions hooked to actions, so that child theme
  * developers can surgically modify the contents and order of
  * everything.
  */
-require_once( 'includes/truss-actions.php' );
+
+require_once( 'includes/truss.php' );
+// require_once( 'includes/truss-layout.php' );
 
 require_once( 'includes/truss-components-head.php' );
 require_once( 'includes/truss-components-header.php' );
