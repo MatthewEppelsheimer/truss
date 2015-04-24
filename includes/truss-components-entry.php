@@ -35,7 +35,6 @@ function truss_entry_header(){ ?>
  * `truss_show_entry_summary`. Intended to be hooked to
  * `truss_entry`, to run inside an <article> tag.
  *
- * @todo audit and finalize markup
  * @todo add filters
  * @todo document filters
  *
@@ -61,8 +60,6 @@ function truss_entry_summary() {
  * to run inside an <article> tag in The Loop.
  *
  * @todo add filters
- * @todo audit and finalize markup
- * @todo document filters
  *
  * @package truss
  * @since 1.0
@@ -70,6 +67,8 @@ function truss_entry_summary() {
 function truss_entry_content() {
 	// By filterable default, display full text unless we display excerpts
 	// (which by default is only for search results).
+	// Avoid using `truss_show_entry_full_content` if it is just the
+	// opposite of `truss_show_entry_summary`.
 	if ( ! apply_filters(
 			'truss_show_entry_full_content',
 			! apply_filters(
@@ -81,7 +80,14 @@ function truss_entry_content() {
 	} ?>
 
 	<div class="entry-content" itemprop="articleBody">
-		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'truss' ) ); ?>
+		<?php
+		the_content(
+			apply_filters(
+				'truss_entry_more_link_text',
+				__( 'Continue reading <span class="meta-nav">&rarr;</span>', 'truss' )
+			)
+		);
+		?>
 	</div>
 <?php
 }
