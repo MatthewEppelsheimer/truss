@@ -65,3 +65,15 @@ function truss_entry_header_inside() {
 function truss_entry_header_meta_inside() {
 	do_action( 'truss_entry_header_meta_inside' );
 }
+
+/**
+ * Output entry footer contents.
+ *
+ * Use inside a pre-existing wrapper (typically <footer>).
+ *
+ * @package truss
+ */
+
+function truss_entry_footer_inside() {
+	do_action( 'truss_entry_footer_inside' );
+}

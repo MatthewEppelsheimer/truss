@@ -109,49 +109,24 @@ function truss_entry_pagination() {
 		'after'  => '</div>',
 	) );
 }
-	/**
+
+/**
  * Entry Footer
  *
- * Render a post's <footer> and contents. Intended to be hooked to `truss_entry`,
+ * Render a post's <footer>. Intended to be hooked to `truss_entry`,
  * to run inside an <article> tag in The Loop.
  *
- * @todo make everything inside of the <footer> its own action hook
- * @todo audit and finalize markup
  * @todo add filters
- * @todo document filters
  *
+ * @uses truss_entry_footer_inside()
  * @package truss
  * @since 1.0
  */
-function truss_entry_footer() { ?>
-	<footer class="entry-meta" itemprop="keywords">
-	<?php if ( 'post' == get_post_type() ) : // Hide category and tag text for pages on Search ?>
-		<?php
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'truss' ) );
-		if ( $categories_list && truss_categorized_blog() ) :
-			?>
-			<span class="cat-links">
-				<?php printf( __( 'Posted in %1$s', 'truss' ), $categories_list ); ?>
-			</span>
-		<?php endif; // End if categories ?>
-
-		<?php
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'truss' ) );
-		if ( $tags_list ) :
-			?>
-			<span class="tags-links">
-				<?php printf( __( 'Tagged %1$s', 'truss' ), $tags_list ); ?>
-			</span>
-		<?php endif; // End if $tags_list ?>
-	<?php endif; // End if 'post' == get_post_type() ?>
-
-		<?php if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) : ?>
-		<span class="comments-link" itemprop="comment" ><?php comments_popup_link( __( 'Leave a comment', 'truss' ), __( '1 Comment', 'truss' ), __( '% Comments', 'truss' ) ); ?></span>
-	<?php endif; ?>
-
-		<?php edit_post_link( __( 'Edit', 'truss' ), '<span class="edit-link">', '</span>' ); ?>
-	</footer>
-<?php
+function truss_entry_footer() {
+	// Only display the <footer> if it will not be empty
+	if ( has_filter( 'truss_entry_footer_inside' ) ) { ?>
+		<footer class="entry-meta" itemprop="keywords">
+			<?php truss_entry_footer_inside(); ?>
+		</footer>
+	<?php }
 }
