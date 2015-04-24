@@ -18,10 +18,6 @@ add_action( 'truss_entry', 'truss_entry_footer', 500 );
  * Render a post's <header> and its contents. Intended to be
  * hooked to `truss_entry`, to run inside an <article> tag in The Loop.
  *
- * @todo filter all html classes
- * @todo audit and finalize markup
- * @todo document filters
- *
  * @package truss
  * @since 1.0
  */
