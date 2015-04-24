@@ -17,7 +17,7 @@ add_action( 'truss_footer', 'truss_credits_wrapper', 500 );
  * @since 1.0
  */
 function truss_credits_wrapper(){ ?>
-    <div class="site-credits">
+    <div class="<?php echo apply_filters( 'truss_class_site-credits', 'site-credits' ); ?>">
 	    <?php do_action( 'truss_credits' ); ?>
     </div>
 <?php }
