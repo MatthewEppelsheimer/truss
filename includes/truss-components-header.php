@@ -18,7 +18,7 @@ add_action( 'truss_header', 'truss_primary_nav', 300 );
  * @since 1.0.0
  */
 function truss_site_title() { ?>
-	<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+	<h1 class="<?php echo apply_filters( 'truss_class_site-title', 'site-title' ); ?>"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 <?php }
 
 /**
