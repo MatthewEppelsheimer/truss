@@ -42,7 +42,7 @@ function truss_site_description() { ?>
  * @since 1.0.0
  */
 function truss_primary_nav() { ?>
-	<nav id="primary-nav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<nav class="primary-nav" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 		<div class="menu-button"><span><?php echo get_theme_mod( 'neat_mobile_nav_label' ); ?></span></div>
 		<?php 	wp_nav_menu( array(
 			    'theme_location' => 'primary-navigation',
