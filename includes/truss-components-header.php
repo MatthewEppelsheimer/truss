@@ -38,7 +38,7 @@ function truss_site_description() { ?>
  *
  * Output primary-nav menu
  *
- * @todo consider filtering menu-button class
+ * @todo (Flexnav) consider filtering menu-button class
  *
  * @package truss
  * @since 1.0.0
