@@ -1,8 +1,11 @@
 <?php
 /**
- * The template part for displaying a message that posts cannot be found.
+ * The template part for what to display when posts cannot be found.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * This file is loaded in these situations:
+ *     - From `archive.php`, outside of The Loop
+ *     - From `search.php`, outside of The Loop
+ *     - From `index.php`, outside of The Loop
  *
  * @package truss
  */
