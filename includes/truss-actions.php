@@ -1,8 +1,21 @@
 <?php
 /**
  * Template functions that fire Truss actions
+ *
  */
- 
+
+/**
+ *
+ * This function is the final thing a typical page template
+ * calls, after setting up layout.
+ *
+ * @package truss
+ * @since 1.0.0
+ */
+function truss() {
+	do_action( 'truss' );
+}
+
 /**
  * Output <head> components
  *
