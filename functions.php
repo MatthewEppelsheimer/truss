@@ -173,6 +173,7 @@ require_once( 'includes/truss.php' );
 require_once( 'includes/truss-components-head.php' );
 require_once( 'includes/truss-components-header.php' );
 
+require_once( 'includes/truss-components-main.php' );
 require_once( 'includes/truss-components-loop.php' );
 
 require_once( 'includes/truss-components-entry.php' );

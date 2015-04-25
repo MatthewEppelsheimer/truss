@@ -8,10 +8,6 @@
  * @todo confirm `tha_body_bottom()` should come before `wp_footer()`.
  */
 ?>
-			<?php tha_content_bottom(); ?>
-		</main>
-		<?php tha_content_after(); ?>
-
    		<?php tha_footer_before(); ?>
 		<footer class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
 			<?php tha_footer_top(); ?>

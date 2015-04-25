@@ -38,6 +38,15 @@ function truss_header(){
 }
 
 /**
+ * Output main content
+ *
+ * @package truss
+ */
+function truss_main(){
+	do_action( 'truss_main' );
+}
+
+/**
  * Output main <footer> components
  *
  * @package truss

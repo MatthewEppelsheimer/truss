@@ -15,7 +15,7 @@ add_action( 'truss', 'truss_right_sidebar', 300 );
 truss();
 */
 
-add_action( 'truss', 'truss_loop', 200 );
+add_action( 'truss', 'truss_main', 200 );
 add_action( 'truss', 'get_sidebar', 300 );
 
 truss();

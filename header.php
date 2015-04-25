@@ -29,7 +29,3 @@
 			<?php tha_header_bottom(); ?>
 		</header>
 		<?php tha_header_after(); ?>
-
-		<?php tha_content_before(); ?>
-		<main class="site-main" role="main">
-			<?php tha_content_top(); ?>
