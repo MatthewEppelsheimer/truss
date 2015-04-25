@@ -14,7 +14,7 @@
 			@include span-columns(4);
 		}
 	}
-	#secondary {
+	.secondary {
 		float: left !important;
 		margin-right: 1.5%;
 		@include media($sm) {

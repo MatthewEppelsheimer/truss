@@ -47,6 +47,15 @@ function truss_main(){
 }
 
 /**
+ * Output primary sidebar
+ *
+ * @package truss
+ */
+function truss_sidebar_primary(){
+	do_action( 'truss_sidebar_primary' );
+}
+
+/**
  * Output main <footer> components
  *
  * @package truss
