@@ -17,7 +17,6 @@ add_action( 'truss_sidebar_primary', 'truss_layout_sidebar_primary', 100 );
  *   - tha_sidebars_after
  *
  * @todo audit all markup
- * @todo make static default its own separate action hook and defaults
  *
  * @package truss
  */
@@ -26,29 +25,10 @@ function truss_layout_sidebar_primary() {
 	<div class="<?php echo apply_filters( 'truss_class_sidebar_primary', 'widget-area secondary' ); ?>" role="complementary">
 		<?php
 		tha_sidebar_top();
-		if ( ! dynamic_sidebar( 'sidebar-1' ) ) { ?>
+		if ( ! dynamic_sidebar( 'sidebar-1' ) ) {
 
-			<aside id="search" class="widget widget_search">
-				<?php get_search_form(); ?>
-			</aside>
+			truss_sidebar_primary_static();
 
-			<aside id="archives" class="widget">
-				<h4 class="widget-title"><?php _e( 'Archives', 'truss' ); ?></h4>
-				<ul>
-					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-				</ul>
-			</aside>
-
-			<aside id="meta" class="widget">
-				<h4 class="widget-title"><?php _e( 'Meta', 'truss' ); ?></h4>
-				<ul>
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<?php wp_meta(); ?>
-				</ul>
-			</aside>
-
-		<?php
 		}
 		tha_sidebar_bottom(); ?>
 	</div>

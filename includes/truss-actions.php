@@ -56,6 +56,15 @@ function truss_sidebar_primary(){
 }
 
 /**
+ * Output static fallback primary sidebar widgets
+ *
+ * @package truss
+ */
+function truss_sidebar_primary_static() {
+	do_action( 'truss_sidebar_primary_static' );
+}
+
+/**
  * Output main <footer> components
  *
  * @package truss
