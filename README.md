@@ -104,8 +104,10 @@ A Truss fully implemented Truss component has:
     * For the duration of Truss' alpha development, this is tricky because the existing page templates are a bit of a mess. See _"Updating page templates to properly use components as we go"_, below…
 1. A file in `includes/` named `component-<component-name>.php` that defines callbacks to run on the `truss_<component>` action.
     * Use our Yeoman generator script for the skeleton of this file
-1. A Sass file in the `sass/extends` directory named `component.scss` that defines a Sass placeholder `%<component-name>`.
-1. A Sass file in the `sass/component` or `sass/layout` directory that defines rules for the `.<component-name>` selector, which merely extends `%<component-name>`.
+1. A Sass file in a subdirectory of `library/assets/sass/globals/extends` named `<component-name>.scss`, which defines a Sass placeholder `%<component-name>`, fully implementing the intended layout/appearance.
+    *  If the component is for layout, its extend should be in `sass/globals/extends/layout/`
+    *  If the component is for appearance, its extend should be in `sass/globals/extends/components/`
+1. A Sass file in the `library/assets/sass/component` or `library/assets/sass/layout` directory that defines rules for the `.<component-name>` selector, which merely extends `%<component-name>`.
     *  The file should go in `sass/layout` if the component's role is  about page layout, as opposed to appearance — for example, a section row or a column.
     *  The file should go in `sass/component` if it doesn't qualify as a 'layout' class.
     *  See _"CSS User Guide"_ below for more info on this. 
