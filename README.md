@@ -115,12 +115,13 @@ A Truss fully implemented Truss component has:
 ### Component Nomenclature
 
 - Use simple, plain-English descriptive terms. Avoid existing jargon. Avoid introducing new jargon.
-Prefix with `truss_`
-Keep names as brief as possible while still being unique and descriptive. 
-Add specificity as needed to make component names unique. Add suffixes for specificity — in other words, `truss_<thing>_<type>` creates a more specific type of `truss_<thing>`. Don't use `truss_<type>_<thing>`.
-`truss_column_main` is good because it can be alpha-grouped with columns of other types. `truss_main_column` is bad because it can't. 
-Be as specific as needed to avoid component names that could mean various things. 
-`truss_column_main` instead of `truss_main`. ("Main what?")
+- Prefix with `truss_`
+- Keep names as brief as possible while still being unique and descriptive. 
+- Add specificity as needed to make component names unique. Add suffixes for specificity
+    -  In other words, `truss_<thing>_<type>` creates a more specific type of `truss_<thing>`. Don't use `truss_<type>_<thing>`.
+    - `truss_column_main` is good because it can be alpha-grouped with columns of other types. `truss_main_column` is bad because it can't. 
+- Be as specific as needed to avoid component names that could mean various things. 
+    - `truss_column_main` instead of `truss_main`. ("Main what?")
 
 ### PHP Standards for Components and their Content
 
