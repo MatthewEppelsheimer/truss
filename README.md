@@ -71,6 +71,75 @@ Truss authors have verified Truss styles behave as expected in these browsers:
 	* Mini (Mobile Safari X.X)
 	* Mini 2 (Mobile Safari X.X)
 
+## PHP User Guide
+
+### PHP File Organization
+
+TBD.
+
+### Truss Components
+
+Truss is a library of _components_. 
+
+A _component_ in Truss is a discrete element of design or area of interface, such as a column, a content area, a banner, or a button. 
+
+Components may be comparatively large or small, and can be nested.
+
+**Each Truss component is implemented in PHP** by a single WordPress action hook, and functions hooked to them that provide PHP, typically including nested components with additional `do_action( '<component>` )` calls.
+
+**Each component is implemented in Sass** with a unique and single-purpose class. Truss' Sass library includes 
+
+**The goal of this system — the "Why" — is to make child theming as easy as possible.**
+
+- Child themers can completely remove a default component, change the ordering of components, and add new custom components by utilizing `add_action()` and `remove_action()` calls.
+- Child themers can change the appearance of components with custom Sass rules targeting the component's class. This avoids requiring non-modular CSS selector nesting and `!important` declaration hell in order to successfully override default CSS in the Truss library.
+
+#### Creating a Component
+
+A Truss fully implemented Truss component has:
+
+1. A unique, descriptive, and semantic class name string to serve as its global identifier throughout Truss' code (PHP and Sass).
+1. A "template hook" PHP function called `truss_<component_name>()` defined in `includes/truss-actions.php`, that just does `do_action( 'truss_<component>' )`.
+1. Use of the template hook wherever appropriate in page templates and/or template partials
+    * For the duration of Truss' alpha development, this is tricky because the existing page templates are a bit of a mess. See _"Updating page templates to properly use components as we go"_, below…
+1. A file in `includes/` named `component-<component-name>.php` that defines callbacks to run on the `truss_<component>` action.
+    * Use our Yeoman generator script for the skeleton of this file
+1. A Sass file in the `sass/extends` directory named `component.scss` that defines a Sass placeholder `%<component-name>`.
+1. A Sass file in the `sass/component` or `sass/layout` directory that defines rules for the `.<component-name>` selector, which merely extends `%<component-name>`.
+    *  The file should go in `sass/layout` if the component's role is  about page layout, as opposed to appearance — for example, a section row or a column.
+    *  The file should go in `sass/component` if it doesn't qualify as a 'layout' class.
+    *  See _"CSS User Guide"_ below for more info on this. 
+
+### Component Nomenclature
+
+- Use simple, plain-English descriptive terms. Avoid existing jargon. Avoid introducing new jargon.
+Prefix with `truss_`
+Keep names as brief as possible while still being unique and descriptive. 
+Add specificity as needed to make component names unique. Add suffixes for specificity — in other words, `truss_<thing>_<type>` creates a more specific type of `truss_<thing>`. Don't use `truss_<type>_<thing>`.
+`truss_column_main` is good because it can be alpha-grouped with columns of other types. `truss_main_column` is bad because it can't. 
+Be as specific as needed to avoid component names that could mean various things. 
+`truss_column_main` instead of `truss_main`. ("Main what?")
+
+### PHP Standards for Components and their Content
+
+- When in doubt, make it filterable.
+- Always use HTML classes, never use HTML ids.
+- 100% of PHP that implements a component should be wrapped in one or more functions that are hooked to the component's action.
+
+### Converting Truss to fully use this Component System
+
+Truss is a fork of another project that didn't have this component system — the component system is unique to Truss. As such, as of this writing, most of the page templates in Truss do not yet implement this system. 
+
+It is a short term goal of the Truss development project to fully convert page templates to this nested component system — a mark of success will be removing this section of this documentation.
+
+Here are a few things to keep in mind while **updating page templates to properly use components:**
+
+- You'll often need to convert existing markup into components. Go ahead.
+- Carefully consider the naming of new components, following the _Rules for Component Nomenclature_ (see above).
+- Translate existing markup into _Truss standards_ (see above).
+- Migrate code to where its should be within Truss' file structure.
+    * Page templates themselves should be quite brief, and just fire off action hooks where the exiting things happen. See `index.php` as a basic but poignant example.
+
 ## CSS User Guide
 
 Follow the [SMACSS.com](http://smacss.com/) book's recommendations for writing and organizing CSS selectors and rules. These recommendations result in CSS that is scalable and easier to maintain, by making as few assumptions about HTML structure as possible (if they need to change in the future, we aren't handcuffed), and by limiting the potential for changes and additions to have unintended consequences. 
