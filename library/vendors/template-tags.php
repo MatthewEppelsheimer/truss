@@ -8,7 +8,8 @@
  */
 
 if ( ! function_exists( 'truss_paging_nav' ) ) :
-/**
+	add_action( 'truss_after_while', 'truss_paging_nav' );
+	/**
  * Display navigation to next/previous set of posts when applicable.
  *
  * @return void

@@ -3,6 +3,9 @@
 **/.sass-cache
 **/.sass-cache/*
 
+# sassdoc
+sassdoc/
+
 # Codekit
 /codekit-config.json
 *.codekit

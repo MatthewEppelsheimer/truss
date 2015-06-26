@@ -6,7 +6,7 @@
 		text-align: left;
 	}
 
-	#primary {
+	.site-main {
 		@include media($sm) {
 			float: left !important;
 			@include media($sm) {
@@ -21,7 +21,7 @@
 		}
 	}
 
-	#secondary {
+	.secondary {
 		@include media($sm) {
 
 		}

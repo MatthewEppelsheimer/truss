@@ -1,0 +1,8 @@
+/// Layout for the site's header
+/// Establishes Neat's `outer-container` context.
+///
+/// @group Truss Layout
+/// @author Matthew Eppelsheimer
+%site-header {
+	@include outer-container;
+}

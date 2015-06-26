@@ -54,6 +54,8 @@ function truss_title(){ ?>
  *
  * Output profile meta tag.
  *
+ * @todo research/document better: What does this do?
+ *
  * @package truss
  * @since 1.0
  */

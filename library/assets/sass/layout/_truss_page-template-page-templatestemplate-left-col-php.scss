@@ -5,7 +5,7 @@
 		margin: 0;
 		text-align: left;
 	}
-	#primary {
+	.site-main {
 		float: right !important;
 		@include media($sm) {
 			@include span-columns(4);
@@ -14,7 +14,7 @@
 			@include span-columns(4);
 		}
 	}
-	#secondary {
+	.secondary {
 		float: left !important;
 		margin-right: 1.5%;
 		@include media($sm) {

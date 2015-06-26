@@ -2,6 +2,7 @@
 /**
  * truss functions and definitions
  *
+ * @todo refactor using Genesis' `require_once` pattern to allow child themes freedom to use the framework immediately.
  * @package truss
  */
 
@@ -154,15 +155,44 @@ endif;
 
 /**
  * Include Truss actions
+ */
+require_once( 'includes/truss-actions.php' );
+
+/**
+ * Include Truss components
  *
  * Truss isolates nearly every component of html output into
  * individual functions hooked to actions, so that child theme
- * developers can surgically modify contents and order of
+ * developers can surgically modify the contents and order of
  * everything.
  */
-require_once( 'includes/truss-actions.php' );
+
+require_once( 'includes/truss.php' );
+// require_once( 'includes/truss-layout.php' );
+
 require_once( 'includes/truss-components-head.php' );
 require_once( 'includes/truss-components-header.php' );
+
+require_once( 'includes/truss-components-main.php' );
+require_once( 'includes/truss-components-loop.php' );
+
+require_once( 'includes/truss-components-sidebar-primary.php');
+require_once( 'includes/truss-components-sidebar-primary-static.php');
+
+require_once( 'includes/truss-components-entry.php' );
+require_once( 'includes/truss-components-entry-header.php' );
+require_once( 'includes/truss-components-entry-header-meta.php' );
+require_once( 'includes/truss-components-entry-footer.php' );
+
+require_once( 'includes/truss-components-footer.php');
+require_once( 'includes/truss-components-site-credits.php');
+
+/**
+ * Include Truss filter functions
+ *
+ * Pre-defined functions hooked to Truss filters.
+ */
+require_once( 'includes/truss-filters.php' );
 
 /**
  * Including Theme Hook Alliance (https://github.com/zamoose/themehookalliance).
@@ -306,20 +336,6 @@ if ( !function_exists('truss_mobile_styles') ) :
 		 }
 	}
 	add_action('wp_head', 'truss_mobile_styles' );
-endif;
-
-if ( !function_exists('truss_add_footer_divs') ) :
-	function truss_add_footer_divs() { ?>
-
-		<div class="footer-left">
-			 <?php echo get_theme_mod( 'truss_footer_left' ); ?>
-
-		</div>
-		<div class="footer-right">
-			<?php echo get_theme_mod( 'truss_footer_right' ); ?>
-		</div>
-<?php }
-add_action( 'tha_footer_bottom', 'truss_add_footer_divs' );
 endif;
 
 add_action( 'tha_head_bottom', 'truss_add_selectivizr' );

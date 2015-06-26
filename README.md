@@ -38,6 +38,8 @@ At a glance, Truss uses:
 
 * [TGM Plugin Activation](#) to recommend and require plugins
 
+* [Sassdoc](/) documentation of Sass variables, mixins, and placeholders, available at [trusstheme.com/sass](https://trusstheme.com/sass/).
+
 ### Browser Support
 
 Truss takes a progressive enhancement approach, meaning that baseline support is guaranteed for an arbitrary list of older browsers, and enhanced CSS is served to newer browsers based on capatilbitiy detection.
@@ -68,6 +70,78 @@ Truss authors have verified Truss styles behave as expected in these browsers:
 	* Air 2 (Mobile Safari X.X)
 	* Mini (Mobile Safari X.X)
 	* Mini 2 (Mobile Safari X.X)
+
+## PHP User Guide
+
+### PHP File Organization
+
+TBD.
+
+### Truss Components
+
+Truss is a library of _components_. 
+
+A _component_ in Truss is a discrete element of design or area of interface, such as a column, a content area, a banner, or a button. 
+
+Components may be comparatively large or small, and can be nested.
+
+**Each Truss component is implemented in PHP** by a single WordPress action hook, and functions hooked to them that provide PHP, typically including nested components with additional `do_action( '<component>` )` calls.
+
+**Each component is implemented in Sass** with a unique and single-purpose class. Truss' Sass library includes 
+
+**The goal of this system — the "Why" — is to make child theming as easy as possible.**
+
+- Child themers can completely remove a default component, change the ordering of components, and add new custom components by utilizing `add_action()` and `remove_action()` calls.
+- Child themers can change the appearance of components with custom Sass rules targeting the component's class. This avoids requiring non-modular CSS selector nesting and `!important` declaration hell in order to successfully override default CSS in the Truss library.
+
+#### Creating a Component
+
+A Truss fully implemented Truss component has:
+
+1. A unique, descriptive, and semantic class name string to serve as its global identifier throughout Truss' code (PHP and Sass).
+1. A "template hook" PHP function called `truss_<component_name>()` defined in `includes/truss-actions.php`, that just does `do_action( 'truss_<component>' )`.
+1. Use of the template hook wherever appropriate in page templates and/or template partials
+    * For the duration of Truss' alpha development, this is tricky because the existing page templates are a bit of a mess. See _"Updating page templates to properly use components as we go"_, below…
+1. A file in `includes/` named `component-<component-name>.php` that defines callbacks to run on the `truss_<component>` action.
+    * Use our Yeoman generator script for the skeleton of this file
+1. A Sass file in a subdirectory of `library/assets/sass/globals/extends` named `<component-name>.scss`, which defines a Sass placeholder `%<component-name>`, fully implementing the intended layout/appearance.
+    *  If the component is for layout, its extend should be in `sass/globals/extends/layout/`
+    *  If the component is for appearance, its extend should be in `sass/globals/extends/components/`
+1. A Sass file in the `library/assets/sass/component` or `library/assets/sass/layout` directory that defines rules for the `.<component-name>` selector, which merely extends `%<component-name>`.
+    *  The file should go in `sass/layout` if the component's role is  about page layout, as opposed to appearance — for example, a section row or a column.
+    *  The file should go in `sass/component` if it doesn't qualify as a 'layout' class.
+    *  See _"CSS User Guide"_ below for more info on this. 
+
+### Component Nomenclature
+
+- Use simple, plain-English descriptive terms. Avoid existing jargon. Avoid introducing new jargon.
+- Prefix with `truss_`
+- Keep names as brief as possible while still being unique and descriptive. 
+- Add specificity as needed to make component names unique. Add suffixes for specificity
+    -  In other words, `truss_<thing>_<type>` creates a more specific type of `truss_<thing>`. Don't use `truss_<type>_<thing>`.
+    - `truss_column_main` is good because it can be alpha-grouped with columns of other types. `truss_main_column` is bad because it can't. 
+- Be as specific as needed to avoid component names that could mean various things. 
+    - `truss_column_main` instead of `truss_main`. ("Main what?")
+
+### PHP Standards for Components and their Content
+
+- When in doubt, make it filterable.
+- Always use HTML classes, never use HTML ids.
+- 100% of PHP that implements a component should be wrapped in one or more functions that are hooked to the component's action.
+
+### Converting Truss to fully use this Component System
+
+Truss is a fork of another project that didn't have this component system — the component system is unique to Truss. As such, as of this writing, most of the page templates in Truss do not yet implement this system. 
+
+It is a short term goal of the Truss development project to fully convert page templates to this nested component system — a mark of success will be removing this section of this documentation.
+
+Here are a few things to keep in mind while **updating page templates to properly use components:**
+
+- You'll often need to convert existing markup into components. Go ahead.
+- Carefully consider the naming of new components, following the _Rules for Component Nomenclature_ (see above).
+- Translate existing markup into _Truss standards_ (see above).
+- Migrate code to where its should be within Truss' file structure.
+    * Page templates themselves should be quite brief, and just fire off action hooks where the exiting things happen. See `index.php` as a basic but poignant example.
 
 ## CSS User Guide
 
@@ -247,6 +321,61 @@ Folder Structure
   * **page-templates** ( Standard Page Templates for Pages )
       * partials ( Template Parts via get_template_parts() )
 
+## Maintainting Documentation
+
+### Sassdoc
+
+Documentation for Truss' Sass library is available at [trusstheme.com/sass](https://trusstheme.com/sass/). This is compiled from comments in our Sass sourcecode, using [Sassdoc](http://sassdoc.com/). 
+
+#### Making inline annotations for Sassdoc
+
+**As you add and edit Sass, document it inline to include it automatically at compile time, using Sassdoc.**
+
+Each Sassdoc block line must begin with `/// `. C-style comment blocks (`/**`) and lines with only two slashes will not compile.
+
+```css
+/// Here is the description
+/// On several lines if you like
+///
+/// @example
+///   4 + 2 = 8
+///   4 / 2 = 2
+///
+/// @example scss - Clamp function
+///   clamp(42, $min: 13, $max: 37)
+///   // 37
+///
+/// @group truss
+/// @author Matthew Eppelsheimer
+/// @since 0.1
+%some-placeholder {
+	display: block;
+}
+```
+
+Here is the complete list of [Sassdoc Annotations](http://sassdoc.com/annotations//). 
+
+#### Compiling Sassdoc
+
+Install `sassdoc` from the `npm` repository. `$ npm install sassdoc -g` will install it globally on your system.
+
+To compile, switch to Truss' project root and run `$ sassdoc library/assets/sass/`. Be sure to note any errors.
+
+You may optionally control the directory name where generated documentation site files are output by passing a `dest` argument. This example will place output in directory `foo/`, which should be load immediately in a browser. 
+
+```
+$ sassdoc library/assets/sass/ --dest=foo
+```
+
+We use the default `sassdoc/` output directory for this project, and it is included in the `.gitignore` file. **So you can (and should) safely compile at will after adding or editing Sass documentation, to test your changes.**
+
+Note that running this command is a destructive operation to anything already in the destination directory.
+
+For more on using Sassdoc, run `$ sassdoc --help` or visit [sassdoc.com](http://sassdoc.com/).
+
+### This README file
+
+You're reading it right now. Be sure to keep this up to date as Truss grows and changes.
 
 ## Credits
 
