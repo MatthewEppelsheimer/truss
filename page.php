@@ -10,17 +10,58 @@
  * @package truss
  */
 
-get_header(); ?>
+add_action( 'page', 'page_before', 100 );
+add_action( 'page', 'page_content', 200 );
+add_action( 'page', 'page_after', 300 );
 
+/**
+ * Output page header
+ *
+ * @package truss
+ * @since 1.0.0
+ */
+function page_before() {
+	get_header();
+	?>
 	<main class="site-main" role="main">
+	<?php
+}
 
-			<?php while ( have_posts() ) : the_post(); ?>
+/**
+ * Output page loop
+ *
+ * @package truss
+ * @since 1.0.0
+ */
+function page_content() {
+	while ( have_posts() ) : the_post();
+		get_template_part( 'page-templates/partials/content', 'page' );
+	endwhile; // end of the loop.
+}
 
-				<?php get_template_part( 'page-templates/partials/content', 'page' ); ?>
-
-			<?php endwhile; // end of the loop. ?>
-
+/**
+ * Output page sidebar and footer
+ *
+ * @package truss
+ * @since 1.0.0
+ */
+function page_after() {
+	?>
 	</main>
+	<?php
+	get_sidebar();
+	get_footer();
 
-<?php get_sidebar(); ?>
-<?php get_footer();
+}
+
+/**
+ * Output page contents
+ *
+ * @package truss
+ * @since 1.0.0
+ */
+function truss_page(){
+	do_action('page');
+}
+
+truss_page();

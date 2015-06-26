@@ -75,5 +75,14 @@ function content_page_footer() {
 	<?php tha_entry_after();
 }
 
-// Do the action that all the previous functions are attached to.
-do_action('content_page');
+
+/**
+ * Output page content
+ *
+ * @package truss
+ * @since 1.0.0
+ */
+function truss_content_page(){
+	do_action('content_page');
+}
+truss_content_page();
