@@ -2,15 +2,16 @@
 /**
  * Default WordPress sidebar partial
  *
- * This is included for WordPress convention, but it is recommended
- * to hook truss_sidebar_primary() to the `truss` action for
- * consistency, instead of using this partial.
+ * This is included for consistency with WordPress convention,
+ * and ensure that get_sidebar() will not break. For consistency with
+ * Truss, rather than using this file, hook truss_column_secondary()
+ * to the `truss`action for.
  *
  * @notice Instead of calling get_sidebar() or including this partial,
- *         hook truss_sidebar_primary() to `truss`.
- * @uses   truss_sidebar_primary()
+ *         hook truss_column_secondary() to `truss`.
+ * @uses   truss_column_secondary()
  *
  * @package truss
  */
 
-truss_sidebar_primary();
+truss_column_secondary();

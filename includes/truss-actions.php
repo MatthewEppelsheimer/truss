@@ -51,8 +51,8 @@ function truss_main(){
  *
  * @package truss
  */
-function truss_sidebar_primary(){
-	do_action( 'truss_sidebar_primary' );
+function truss_column_secondary(){
+	do_action( 'truss_column_secondary' );
 }
 
 /**
@@ -60,8 +60,8 @@ function truss_sidebar_primary(){
  *
  * @package truss
  */
-function truss_sidebar_primary_static() {
-	do_action( 'truss_sidebar_primary_static' );
+function truss_column_secondary_static() {
+	do_action( 'truss_column_secondary_static' );
 }
 
 /**
