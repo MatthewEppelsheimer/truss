@@ -128,3 +128,23 @@ function truss_entry_header_meta_inside() {
 function truss_entry_footer_inside() {
 	do_action( 'truss_entry_footer_inside' );
 }
+
+/**
+ * Output page content
+ *
+ * @package truss
+ * @since 1.0.0
+ */
+function truss_content_page(){
+	do_action('content_page');
+}
+
+/**
+ * Output page
+ *
+ * @package truss
+ * @since 1.0.0
+ */
+function truss_page(){
+	do_action('page');
+}

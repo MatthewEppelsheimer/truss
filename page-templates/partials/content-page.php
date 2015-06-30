@@ -76,13 +76,5 @@ function content_page_footer() {
 }
 
 
-/**
- * Output page content
- *
- * @package truss
- * @since 1.0.0
- */
-function truss_content_page(){
-	do_action('content_page');
-}
+
 truss_content_page();
