@@ -176,8 +176,8 @@ require_once( 'includes/truss-components-header.php' );
 require_once( 'includes/truss-components-main.php' );
 require_once( 'includes/truss-components-loop.php' );
 
-require_once( 'includes/truss-components-sidebar-primary.php');
-require_once( 'includes/truss-components-sidebar-primary-static.php');
+require_once( 'includes/truss-components-column-secondary.php' );
+require_once( 'includes/truss-components-column-secondary-static.php' );
 
 require_once( 'includes/truss-components-entry.php' );
 require_once( 'includes/truss-components-entry-header.php' );

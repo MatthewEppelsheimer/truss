@@ -1,15 +1,15 @@
 <?php
 /**
- * Components intended to be hooked to `truss_sidebar_primary_static`
+ * Components intended to be hooked to `truss_column_secondary_static`
  *
  * @todo break widget contents into functions and hook to their internal actions
  *
  * @package truss
  */
 
-add_action( 'truss_sidebar_primary_static', 'truss_default_widget_search', 100 );
-add_action( 'truss_sidebar_primary_static', 'truss_default_widget_archives', 200 );
-add_action( 'truss_sidebar_primary_static', 'truss_default_widget_meta', 300 );
+add_action( 'truss_column_secondary_static', 'truss_default_widget_search', 100 );
+add_action( 'truss_column_secondary_static', 'truss_default_widget_archives', 200 );
+add_action( 'truss_column_secondary_static', 'truss_default_widget_meta', 300 );
 
 /**
  * Output search widget in default static sidebar
