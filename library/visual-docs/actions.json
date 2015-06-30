@@ -1,0 +1,23 @@
+{
+	"name": "truss",
+	"children": [
+		{
+			"name": "truss_column_primary",
+			"parent": "truss",
+			"children": [
+				{
+					"name": "Son of Bob",
+					"parent": "truss_column_primary"
+				},
+				{
+					"name": "Daughter of Bob",
+					"parent": "truss_column_primary"
+				}
+			]
+		},
+		{
+			"name": "truss_column_secondary",
+			"parent": "truss"
+		}
+	]
+}
