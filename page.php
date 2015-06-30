@@ -54,14 +54,4 @@ function page_after() {
 
 }
 
-/**
- * Output page contents
- *
- * @package truss
- * @since 1.0.0
- */
-function truss_page(){
-	do_action('page');
-}
-
 truss_page();
