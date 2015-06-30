@@ -1,23 +1,65 @@
 {
-	"name": "truss",
+	"name": "h. truss",
 	"children": [
 		{
-			"name": "truss_column_primary",
-			"parent": "truss",
+			"name": "REFACTOR: f. get_header()",
+			"parent": "h. truss",
 			"children": [
 				{
-					"name": "Son of Bob",
-					"parent": "truss_column_primary"
-				},
-				{
-					"name": "Daughter of Bob",
-					"parent": "truss_column_primary"
+					"name": "h. truss_header",
+					"parent": "f. get_header()",
+					"children": [
+						{
+							"name": "f. truss_meta_charset",
+							"parent": "h. truss_header"
+						},
+						{
+							"name": "f. truss_meta_viewport",
+							"parent": "h. truss_header"
+						},
+						{
+							"name": "f. truss_title",
+							"parent": "h. truss_header"
+						},
+						{
+							"name": "f. truss_meta_profile",
+							"parent": "h. truss_header"
+						},
+						{
+							"name": "f. truss_meta_pingback",
+							"parent": "h. truss_header"
+						}
+					]
 				}
 			]
 		},
 		{
-			"name": "truss_column_secondary",
-			"parent": "truss"
+			"name": "h. truss_layout_column_primary",
+			"parent": "h. truss",
+			"children": [
+				{
+					"name": "h. truss_component_main",
+					"parent": "h. truss_column_primary"
+				}
+			]
+		},
+		{
+			"name": "h. truss_column_secondary",
+			"parent": "h. truss",
+			"children": [
+				{
+					"name": "h. truss_column_secondary_static",
+					"parent": "h. truss_column_secondary"
+				}
+			]
+		},
+		{
+			"name": "f. get_footer()",
+			"parent": "h. truss",
+			"children": [
+
+			]
 		}
+
 	]
 }
