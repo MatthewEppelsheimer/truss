@@ -28,7 +28,10 @@
 
 <body>
 
-<h1>Truss Actions</h1>
+<h2><code>truss_main</code></h2>
+<div id="truss_main"></div>
+<!-- <h2><code>truss_head</code></h2>
+<div id="truss_head"></div>-->
 
 <!-- load jQuery -->
 <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
@@ -38,88 +41,90 @@
 
 
 <script>
+	var jsonData;
 	$(document).ready(function($){
 		// Load the data
-		var jsonData = $.ajax({
+		jsonData = $.ajax({
 			url: 'actions.json',
-			dataType: 'json'
-		}).done(function(){
-
-			var treeData = jsonData.responseJSON;
-			console.log(treeData);
-
-			// ************** Generate the tree diagram  *****************
-			var margin = {top: 20, right: 120, bottom: 20, left: 120},
-					width = 960 - margin.right - margin.left,
-					height = 500 - margin.top - margin.bottom;
-
-			var i = 0;
-
-			// Define the type of d3 structure (tree)
-			var tree = d3.layout.tree()
-					.size([height, width]);
-
-			// Define the lines drawn between nodes as bezier curves
-			var diagonal = d3.svg.diagonal()
-					.projection(function(d) { return [d.y, d.x]; });
-
-			// Add the SVG to the body and define "g" for its group of nodes
-			var svg = d3.select("body").append("svg")
-					.attr("width", width + margin.right + margin.left)
-					.attr("height", height + margin.top + margin.bottom)
-					.append("g")
-					.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-			// Flip the 'on switch'
-			update(treeData);
-
-			// Define the 'on switch'
-			function update(source) {
-
-				// Compute the new tree layout.
-				var nodes = tree.nodes(source).reverse(),
-						links = tree.links(nodes);
-
-				// Normalize for fixed-depth.
-				nodes.forEach(function(d) { d.y = d.depth * 180; });
-
-				// Declare the nodes
-				var node = svg.selectAll("g.node")
-						.data(nodes, function(d) { return d.id || (d.id = ++i); });
-
-				// Enter the nodes.
-				var nodeEnter = node.enter().append("g")
-						.attr("class", "node")
-						.attr("transform", function(d) {
-							return "translate(" + d.y + "," + d.x + ")"; });
-
-				nodeEnter.append("circle")
-						.attr("r", 10)
-						.style("fill", "#fff");
-
-				nodeEnter.append("text")
-						.attr("x", function(d) {
-							return d.children || d._children ? -13 : 13; })
-						.attr("dy", ".35em")
-						.attr("text-anchor", function(d) {
-							return d.children || d._children ? "end" : "start"; })
-						.text(function(d) { return d.name; })
-						.style("fill-opacity", 1);
-
-				// Declare the links
-				var link = svg.selectAll("path.link")
-						.data(links, function(d) { return d.target.id; });
-
-				// Enter the links.
-				link.enter().insert("path", "g")
-						.attr("class", "link")
-						.attr("d", diagonal);
-
-			}
+			dataType: 'json',
+			complete: writeTrees
 		});
 	});
 
+	function writeTrees(){
+		console.log(jsonData.responseJSON);
+		var treeData = jsonData.responseJSON;
 
+
+		// ************** Generate the tree diagram  *****************
+		var margin = {top: 20, right: 120, bottom: 20, left: 120},
+				width = 960 - margin.right - margin.left,
+				height = 500 - margin.top - margin.bottom;
+
+		var i = 0;
+
+		// Define the type of d3 structure (tree)
+		var tree = d3.layout.tree()
+				.size([height, width]);
+
+		// Define the lines drawn between nodes as bezier curves
+		var diagonal = d3.svg.diagonal()
+				.projection(function(d) { return [d.y, d.x]; });
+
+		// Add the SVG to the body and define "g" for its group of nodes
+		var svg = d3.select("#truss_main").append("svg")
+				.attr("width", width + margin.right + margin.left)
+				.attr("height", height + margin.top + margin.bottom)
+				.append("g")
+				.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+		// Flip the 'on switch'
+		update(treeData);
+
+		// Define the 'on switch'
+		function update(source) {
+
+			// Compute the new tree layout.
+			var nodes = tree.nodes(source).reverse(),
+					links = tree.links(nodes);
+
+			// Normalize for fixed-depth.
+			nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+			// Declare the nodes
+			var node = svg.selectAll("g.node")
+					.data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+			// Enter the nodes.
+			var nodeEnter = node.enter().append("g")
+					.attr("class", "node")
+					.attr("transform", function(d) {
+						return "translate(" + d.y + "," + d.x + ")"; });
+
+			nodeEnter.append("circle")
+					.attr("r", 10)
+					.style("fill", "#fff");
+
+			nodeEnter.append("text")
+					.attr("x", function(d) {
+						return d.children || d._children ? -13 : 13; })
+					.attr("dy", ".35em")
+					.attr("text-anchor", function(d) {
+						return d.children || d._children ? "end" : "start"; })
+					.text(function(d) { return d.name; })
+					.style("fill-opacity", 1);
+
+			// Declare the links
+			var link = svg.selectAll("path.link")
+					.data(links, function(d) { return d.target.id; });
+
+			// Enter the links.
+			link.enter().insert("path", "g")
+					.attr("class", "link")
+					.attr("d", diagonal);
+
+		}
+	}
 
 </script>
 
