@@ -184,8 +184,8 @@ require_once( 'includes/truss-components-entry-header.php' );
 require_once( 'includes/truss-components-entry-header-meta.php' );
 require_once( 'includes/truss-components-entry-footer.php' );
 
-require_once( 'includes/truss-components-footer.php');
-require_once( 'includes/truss-components-site-credits.php');
+require_once( 'includes/truss-components-footer.php' );
+require_once( 'includes/truss-components-site-credits.php' );
 
 /**
  * Include Truss filter functions
