@@ -156,7 +156,7 @@ endif;
 /**
  * Include Truss actions
  */
-require_once( 'includes/truss-actions.php' );
+require_once( 'library/includes/truss-actions.php' );
 
 /**
  * Include Truss components
@@ -167,32 +167,32 @@ require_once( 'includes/truss-actions.php' );
  * everything.
  */
 
-require_once( 'includes/truss.php' );
-// require_once( 'includes/truss-layout.php' );
+require_once( 'library/includes/truss.php' );
+// require_once( 'library/includes/truss-layout.php' );
 
-require_once( 'includes/truss-components-head.php' );
-require_once( 'includes/truss-components-header.php' );
+require_once( 'library/includes/truss-components-head.php' );
+require_once( 'library/includes/truss-components-header.php' );
 
-require_once( 'includes/truss-components-main.php' );
-require_once( 'includes/truss-components-loop.php' );
+require_once( 'library/includes/truss-components-main.php' );
+require_once( 'library/includes/truss-components-loop.php' );
 
-require_once( 'includes/truss-components-column-secondary.php' );
-require_once( 'includes/truss-components-column-secondary-static.php' );
+require_once( 'library/includes/truss-components-column-secondary.php' );
+require_once( 'library/includes/truss-components-column-secondary-static.php' );
 
-require_once( 'includes/truss-components-entry.php' );
-require_once( 'includes/truss-components-entry-header.php' );
-require_once( 'includes/truss-components-entry-header-meta.php' );
-require_once( 'includes/truss-components-entry-footer.php' );
+require_once( 'library/includes/truss-components-entry.php' );
+require_once( 'library/includes/truss-components-entry-header.php' );
+require_once( 'library/includes/truss-components-entry-header-meta.php' );
+require_once( 'library/includes/truss-components-entry-footer.php' );
 
-require_once( 'includes/truss-components-footer.php' );
-require_once( 'includes/truss-components-site-credits.php' );
+require_once( 'library/includes/truss-components-footer.php' );
+require_once( 'library/includes/truss-components-site-credits.php' );
 
 /**
  * Include Truss filter functions
  *
  * Pre-defined functions hooked to Truss filters.
  */
-require_once( 'includes/truss-filters.php' );
+require_once( 'library/includes/truss-filters.php' );
 
 /**
  * Including Theme Hook Alliance (https://github.com/zamoose/themehookalliance).
