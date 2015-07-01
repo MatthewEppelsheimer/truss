@@ -26,7 +26,7 @@ function truss_component_main() {
 
 		<?php
 		tha_content_top();
-		truss_loop();
+		truss( 'loop' );
 		tha_content_bottom();
 		?>
 

@@ -28,10 +28,10 @@ add_action( 'truss_loop', 'truss_standard_loop', 100 );
  * @package truss
  */
 function truss_standard_loop() {
-	do_action( 'truss_before_loop' );
+	truss( 'before_loop' );
 	if ( have_posts() ) {
 
-		do_action( 'truss_before_while' );
+		truss( 'before_while' );
 		while ( have_posts() ) {
 			the_post();
 			tha_entry_before();
@@ -45,18 +45,18 @@ function truss_standard_loop() {
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); echo apply_filters( 'truss_content_article_html_params', '' ); ?>>
 				<?php tha_entry_top(); ?>
-				<?php truss_entry(); ?>
+				<?php truss( 'entry' ); ?>
 				<?php tha_entry_bottom(); ?>
 			</article>
 
 			<?php tha_entry_after();
 		}
-		do_action( 'truss_after_while' );
+		truss( 'after_while' );
 
 	} else {
 		/* @todo refactor what happens when there are no posts. */
 		get_template_part( 'page-templates/partials-to-refactor/content', 'none' );
 
 	}
-	do_action( 'truss_after_loop' );
+	truss( 'after_loop' );
 }
