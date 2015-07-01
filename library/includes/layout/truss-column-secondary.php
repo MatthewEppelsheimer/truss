@@ -26,7 +26,7 @@ function truss_layout_sidebar_primary() {
 		tha_sidebar_top();
 
 		if ( ! dynamic_sidebar( 'sidebar-1' ) ) {
-			do_action( 'truss_column_secondary_static' );
+			truss( 'column_secondary_static' );
 		}
 
 		tha_sidebar_bottom(); ?>
