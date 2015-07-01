@@ -1,9 +1,0 @@
-{
-	"name": "booters",
-	"children" : [
-		{
-			"name": "fred",
-			"parent": "booters"
-		}
-	]
-}
