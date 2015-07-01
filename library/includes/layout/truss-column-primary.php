@@ -1,20 +1,13 @@
 <?php
 /**
- * Components hooked to truss_column_primary
+ * Layout component: Primary Column
  *
- * @package truss
- */
-
-add_action( 'truss_column_primary', 'truss_layout_column_primary', 100 );
-
-/**
- * Components hooked to `truss_column_primary`
- *
- * Creates div.truss-column-primary that wraps a call to truss_main().
+ * Creates div.truss-column-primary that wraps a call to `truss( 'main' )`.
+ * Intended to be hooked to the `truss` action by page templates.
  *
  * @todo implement
  * @package truss
  */
-function truss_layout_column_primary() {
+function truss_column_primary() {
 
 }
