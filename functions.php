@@ -176,7 +176,9 @@ require_once( 'library/includes/truss-components-header.php' );
 require_once( 'library/includes/truss-components-main.php' );
 require_once( 'library/includes/truss-components-loop.php' );
 
-require_once( 'library/includes/truss-components-column-secondary.php' );
+require_once( 'library/includes/layout/truss-column-primary.php' );
+require_once( 'library/includes/layout/truss-column-secondary.php' );
+
 require_once( 'library/includes/truss-components-column-secondary-static.php' );
 
 require_once( 'library/includes/truss-components-entry.php' );
