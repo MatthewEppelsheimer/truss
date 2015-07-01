@@ -1,13 +1,13 @@
 {
-	"name": "h. truss",
+	"name": "truss",
 	"children": [
 		{
-			"name": "REFACTOR: f. get_header()",
-			"parent": "h. truss",
+			"name": "TO REFACTOR: f. get_header()",
+			"parent": "truss",
 			"children": [
 				{
 					"name": "h. truss_header",
-					"parent": "f. get_header()",
+					"parent": "TO REFACTOR: f. get_header()",
 					"children": [
 						{
 							"name": "f. truss_meta_charset",
@@ -34,32 +34,52 @@
 			]
 		},
 		{
-			"name": "h. truss_layout_column_primary",
-			"parent": "h. truss",
+			"name": "truss_column_primary",
+			"parent": "truss",
 			"children": [
 				{
-					"name": "h. truss_component_main",
-					"parent": "h. truss_column_primary"
+					"name": "truss_loop",
+					"parent": "truss_column_primary",
+					"children": [
+						{
+							"name": "truss_entry",
+							"parent": "truss_loop",
+							"children": [
+								{
+									"name": "truss_entry_header",
+									"parent": "truss_entry",
+									"children": [
+										{
+											"name": "truss_entry_header_meta",
+											"parent": "truss_entry_header"
+										}
+									]
+								},
+								{
+									"name": "truss_entry_footer",
+									"parent": "truss_entry"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
 		{
-			"name": "h. truss_column_secondary",
+			"name": "TO DOCUMENT: h. truss_column_secondary",
 			"parent": "h. truss",
 			"children": [
 				{
 					"name": "h. truss_column_secondary_static",
-					"parent": "h. truss_column_secondary"
+					"parent": "TO DOCUMENT: h. truss_column_secondary"
 				}
 			]
 		},
 		{
-			"name": "f. get_footer()",
+			"name": "TO DOCUMENT: f. get_footer()",
 			"parent": "h. truss",
 			"children": [
-
 			]
 		}
-
 	]
 }

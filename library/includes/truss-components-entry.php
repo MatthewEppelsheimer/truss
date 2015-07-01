@@ -23,7 +23,7 @@ add_action( 'truss_entry', 'truss_entry_footer', 500 );
  */
 function truss_entry_header(){ ?>
 	<header class="<?php echo apply_filters( 'truss_class_entry-header', 'entry-header' ); ?>">
-		<?php truss_entry_header_inside(); ?>
+		<?php truss( 'entry_header' ); ?>
 	</header>
 <?php }
 
@@ -119,7 +119,7 @@ function truss_entry_footer() {
 	// Only display the <footer> if it will not be empty
 	if ( has_filter( 'truss_entry_footer_inside' ) ) { ?>
 		<footer class="<?php echo apply_filters( 'truss_class_entry-meta', 'entry-meta' ); ?>" itemprop="keywords">
-			<?php truss_entry_footer_inside(); ?>
+			<?php truss( 'entry_footer' ); ?>
 		</footer>
 	<?php }
 }

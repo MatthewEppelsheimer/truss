@@ -13,7 +13,7 @@
  *
  * @return  void
  */
-function truss( $truss_action_hook == 'truss' ) {
+function truss( $truss_action_hook = 'truss' ) {
 	if ( $truss_action_hook != 'truss' ) {
 		$truss_action_hook = 'truss_' . $truss_action_hook;
 	}

@@ -5,8 +5,8 @@
  * @package truss
  */
 
-add_action( 'truss_entry_header_inside', 'truss_entry_header_title', 100 );
-add_action( 'truss_entry_header_inside', 'truss_entry_header_meta', 500 );
+add_action( 'truss_entry_header', 'truss_entry_header_title', 100 );
+add_action( 'truss_entry_header', 'truss_entry_header_meta', 500 );
 
 /**
  * Display post title
@@ -49,9 +49,9 @@ function truss_entry_header_title() { ?>
 function truss_entry_header_meta() {
 	// Only display div for posts
 	// Don't display div if its contents will be empty
-	if ( 'post' == get_post_type() && has_filter( 'truss_entry_header_meta_inside' ) ) { ?>
+	if ( 'post' == get_post_type() && has_filter( 'truss_entry_header_meta' ) ) { ?>
 		<div class="<?php echo apply_filters( 'truss_class_entry-header-meta', 'entry-header-meta' ); ?>">
-			<?php truss_entry_header_meta_inside(); ?>
+			<?php truss( 'entry_header_meta' ); ?>
 		</div>
 	<?php }
 }

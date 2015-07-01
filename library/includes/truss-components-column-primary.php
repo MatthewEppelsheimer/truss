@@ -1,11 +1,11 @@
 <?php
 /**
- * The `truss_main` component — the main content on any given page.
+ * The `truss_column_primary` component — the main column on any given page.
  *
  * @package truss
  */
 
-add_action( 'truss_main', 'truss_component_main', 100 );
+add_action( 'truss_column_primary', 'truss_component_main', 100 );
 
 /**
  * The webpage's main section

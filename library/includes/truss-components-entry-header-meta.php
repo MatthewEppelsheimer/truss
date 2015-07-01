@@ -1,12 +1,12 @@
 <?php
 /**
- * Components hooked to `truss_entry_header_meta_inside`
+ * Components hooked to `truss_entry_header_meta`
  *
  * @package truss
  */
 
-add_action( 'truss_entry_header_meta_inside', 'truss_entry_header_meta_time_posted', 100 );
-add_action( 'truss_entry_header_meta_inside', 'truss_entry_header_meta_date_modified', 500 );
+add_action( 'truss_entry_header_meta', 'truss_entry_header_meta_time_posted', 100 );
+add_action( 'truss_entry_header_meta', 'truss_entry_header_meta_date_modified', 500 );
 
 /**
  * Display time a post was published.
