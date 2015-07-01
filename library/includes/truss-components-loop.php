@@ -41,7 +41,7 @@ function truss_standard_loop() {
 			 * If you want to override this in a child theme, then include a file
 			 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 			 */
-			// get_template_part( 'page-templates/partials/content', get_post_format() ); ?>
+			// get_template_part( 'page-templates/partials-to-refactor/content', get_post_format() ); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); echo apply_filters( 'truss_content_article_html_params', '' ); ?>>
 				<?php tha_entry_top(); ?>
@@ -55,7 +55,7 @@ function truss_standard_loop() {
 
 	} else {
 		/* @todo refactor what happens when there are no posts. */
-		get_template_part( 'page-templates/partials/content', 'none' );
+		get_template_part( 'page-templates/partials-to-refactor/content', 'none' );
 
 	}
 	do_action( 'truss_after_loop' );

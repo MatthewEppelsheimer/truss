@@ -35,7 +35,7 @@ function page_before() {
  */
 function page_content() {
 	while ( have_posts() ) : the_post();
-		get_template_part( 'page-templates/partials/content', 'page' );
+		get_template_part( 'page-templates/partials-to-refactor/content', 'page' );
 	endwhile; // end of the loop.
 }
 
