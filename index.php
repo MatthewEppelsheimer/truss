@@ -2,6 +2,8 @@
 /**
  * The main template file.
  *
+ * A main column, plus a right sidebar.
+ *
  * @package truss
  */
 
