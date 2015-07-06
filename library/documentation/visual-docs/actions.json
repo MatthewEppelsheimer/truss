@@ -38,26 +38,32 @@
 			"parent": "truss",
 			"children": [
 				{
-					"name": "truss_loop",
+					"name": "truss_main_content",
 					"parent": "truss_column_primary",
 					"children": [
 						{
-							"name": "truss_entry",
-							"parent": "truss_loop",
+							"name": "truss_loop",
+							"parent": "truss_main_content",
 							"children": [
 								{
-									"name": "truss_entry_header",
-									"parent": "truss_entry",
+									"name": "truss_entry",
+									"parent": "truss_loop",
 									"children": [
 										{
-											"name": "truss_entry_header_meta",
-											"parent": "truss_entry_header"
+											"name": "truss_entry_header",
+											"parent": "truss_entry",
+											"children": [
+												{
+													"name": "truss_entry_header_meta",
+													"parent": "truss_entry_header"
+												}
+											]
+										},
+										{
+											"name": "truss_entry_footer",
+											"parent": "truss_entry"
 										}
 									]
-								},
-								{
-									"name": "truss_entry_footer",
-									"parent": "truss_entry"
 								}
 							]
 						}
