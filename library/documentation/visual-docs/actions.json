@@ -90,7 +90,8 @@
 					"parent": "truss_footer",
 					"children": [
 						{
-							
+							"name": "truss_site_credits",
+							"parent": "truss_site_footer"
 						}
 					]
 				}
