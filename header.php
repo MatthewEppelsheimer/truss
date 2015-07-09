@@ -21,11 +21,10 @@
 <body <?php body_class(); ?>>
 <?php tha_body_top(); ?>
 <div class="site">
-	<div class="wrap">
-		<?php tha_header_before(); ?>
-		<header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
-			<?php tha_header_top(); ?>
-			<?php truss( 'header' ); ?>
-			<?php tha_header_bottom(); ?>
-		</header>
-		<?php tha_header_after(); ?>
+	<?php tha_header_before(); ?>
+	<header class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+		<?php tha_header_top(); ?>
+		<?php truss( 'header' ); ?>
+		<?php tha_header_bottom(); ?>
+	</header>
+	<?php tha_header_after(); ?>
