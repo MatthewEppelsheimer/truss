@@ -188,6 +188,7 @@ require_once( 'library/includes/truss-components-entry-header-meta.php' );
 require_once( 'library/includes/truss-components-entry-footer.php' );
 
 require_once( 'library/includes/truss-components-footer.php' );
+require_once( 'library/includes/truss-components-site-footer.php' );
 require_once( 'library/includes/truss-components-site-credits.php' );
 
 /**
