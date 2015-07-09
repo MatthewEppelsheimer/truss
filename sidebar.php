@@ -14,4 +14,4 @@
  * @package truss
  */
 
-truss_column_secondary();
+truss( 'column_secondary' );
