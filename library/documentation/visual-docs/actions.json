@@ -82,9 +82,18 @@
 			]
 		},
 		{
-			"name": "TO DOCUMENT: f. get_footer()",
-			"parent": "h. truss",
+			"name": "truss_footer",
+			"parent": "truss",
 			"children": [
+				{
+					"name": "truss_site_footer",
+					"parent": "truss_footer",
+					"children": [
+						{
+							
+						}
+					]
+				}
 			]
 		}
 	]

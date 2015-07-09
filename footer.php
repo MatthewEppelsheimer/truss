@@ -1,25 +1,17 @@
 <?php
 /**
- * The template for displaying the footer.
+ * Default WordPress footer partial
  *
- * Contains the closing of the #content div and all content after
+ * This is included for consistency with WordPress convention,
+ * and ensure that get_footer() will not break things. For consistency
+ * with Truss, rather than using this file, hook truss_footer()
+ * to the `truss` action.
+ *
+ * @notice Instead of calling get_footer() or including this partial,
+ *         hook truss_footer() to `truss`.
+ * @uses   truss_footer()
  *
  * @package truss
- * @todo confirm `tha_body_bottom()` should come before `wp_footer()`.
  */
-?>
-    <?php tha_footer_before(); ?>
-	<footer class="site-footer" role="contentinfo" itemscope="itemscope" itemtype="http://schema.org/WPFooter">
-		<?php tha_footer_top(); ?>
-        <?php truss( 'footer' ); ?>
-		<?php tha_footer_bottom(); ?>
-	</footer>
-	<?php tha_footer_after(); ?>
 
-</div><?php /* .site */ ?>
-
-<?php tha_body_bottom(); ?>
-<?php wp_footer(); ?>
-
-</body>
-</html>
+truss ( 'footer' );
