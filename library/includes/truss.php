@@ -18,4 +18,4 @@
 
 // Defined by WordPress
 add_action( 'truss', 'get_header', 1 );
-add_action( 'truss', 'truss_footer', 1000 );
+add_action( 'truss', 'get_footer', 1000 );
