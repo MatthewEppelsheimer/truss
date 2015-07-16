@@ -54,4 +54,5 @@ function page_after() {
 
 }
 
-truss_page();
+truss( 'page' );
+
