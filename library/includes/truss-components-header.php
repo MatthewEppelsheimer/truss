@@ -45,11 +45,11 @@ function truss_site_description() { ?>
  */
 function truss_primary_nav() { ?>
 	<nav class="<?php echo apply_filters( 'truss_class_primary-nav', 'primary-nav' ); ?>" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-		<div class="menu-button"><span><?php echo get_theme_mod( 'neat_mobile_nav_label' ); ?></span></div>
+		<div class="menu-button"><span><?php echo apply_filters( 'truss_class_menu-button' ); ?></span></div>
 		<?php 	wp_nav_menu( array(
 			    'theme_location' => 'primary-navigation',
 			    'menu_class' => 'flexnav', //Add the class for FlexNav
-			    'items_wrap' => '<ul data-breakpoint="'.  get_theme_mod( 'flexnav_breakpoint', '800' ) .'" id="%1$s" class="%2$s">%3$s</ul>', // Add data-breakpoint for FlexNav
+			    'items_wrap' => '<ul data-breakpoint="'.  apply_filters( 'truss_class_data-breakpoint', '800' ) .'" id="%1$s" class="%2$s">%3$s</ul>', // Add data-breakpoint for FlexNav
 			    ));
 		?>
 	</nav>
