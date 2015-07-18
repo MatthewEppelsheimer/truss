@@ -45,7 +45,7 @@ function truss_site_description() { ?>
  */
 function truss_primary_nav() { ?>
 	<nav class="<?php echo apply_filters( 'truss_class_primary-nav', 'primary-nav' ); ?>" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
-		<div class="menu-button"><span><?php echo apply_filters( 'truss_class_menu-button' ); ?></span></div>
+		<div class="menu-button"><span><?php echo apply_filters( 'truss_class_menu-button', 'Menu' ); ?></span></div>
 		<?php 	wp_nav_menu( array(
 			    'theme_location' => 'primary-navigation',
 			    'menu_class' => 'flexnav', //Add the class for FlexNav
