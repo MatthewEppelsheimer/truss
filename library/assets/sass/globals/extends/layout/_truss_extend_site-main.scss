@@ -1,11 +1,11 @@
-/// Layout for the site's main section
-///
-/// @todo reconsider padding
-/// @group Truss Layout
-/// @author Matthew Eppelsheimer
+/**
+ * Layout for the site's main section
+ *
+ * @group Truss Layout
+ * @author Matthew Eppelsheimer
+ */
 %site-main {
 	@include clearfix;
 	margin: auto;
-	padding: 0 40px;
 	width: 100%;
 }

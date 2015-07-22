@@ -5,7 +5,7 @@
  * @package truss
  */
 
-add_action( 'truss_credits', 'truss_credits', 500 );
+add_action( 'truss_site_credits', 'truss_credits', 500 );
 
 
 /**

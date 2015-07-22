@@ -12,10 +12,11 @@
  * other layout components in any order they choose.
  *
  *
- *
+ * @todo update this docblock.
  * @package truss
  */
 
-// Defined by WordPress
+// Default layout: Header, Main, and Footer
 add_action( 'truss', 'get_header', 1 );
+add_action( 'truss', 'truss_component_main', 500 );
 add_action( 'truss', 'get_footer', 1000 );

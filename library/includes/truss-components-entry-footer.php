@@ -1,14 +1,14 @@
 <?php
 /**
- * Components hooked to `truss_entry_footer_inside`
+ * Components hooked to `truss_entry_footer`
  *
  * @package truss
  */
 
-add_action( 'truss_entry_footer_inside', 'truss_entry_footer_categories', 100 );
-add_action( 'truss_entry_footer_inside', 'truss_entry_footer_tags', 200 );
-add_action( 'truss_entry_footer_inside', 'truss_entry_footer_comment_link', 300 );
-add_action( 'truss_entry_footer_inside', 'truss_entry_footer_edit_link', 400 );
+add_action( 'truss_entry_footer', 'truss_entry_footer_categories', 100 );
+add_action( 'truss_entry_footer', 'truss_entry_footer_tags', 200 );
+add_action( 'truss_entry_footer', 'truss_entry_footer_comment_link', 300 );
+add_action( 'truss_entry_footer', 'truss_entry_footer_edit_link', 400 );
 
 
 /**

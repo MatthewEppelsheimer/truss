@@ -85,7 +85,7 @@ A _component_ in Truss is a discrete element of design or area of interface, suc
 
 Components may be comparatively large or small, and can be nested.
 
-**Each Truss component is implemented in PHP** by a single WordPress action hook, and functions hooked to them that provide PHP, typically including nested components with additional `do_action( '<component>` )` calls.
+**Each Truss component is implemented in PHP** by a single WordPress action hook, and functions hooked to them that provide PHP, typically including nested components with additional `truss( '<component_name>` )` calls.
 
 **Each component is implemented in Sass** with a unique and single-purpose class. Truss' Sass library includes 
 
@@ -99,11 +99,8 @@ Components may be comparatively large or small, and can be nested.
 A Truss fully implemented Truss component has:
 
 1. A unique, descriptive, and semantic class name string to serve as its global identifier throughout Truss' code (PHP and Sass).
-1. A "template hook" PHP function called `truss_<component_name>()` defined in `includes/truss-actions.php`, that just does `do_action( 'truss_<component>' )`.
-1. Use of the template hook wherever appropriate in page templates and/or template partials
-    * For the duration of Truss' alpha development, this is tricky because the existing page templates are a bit of a mess. See _"Updating page templates to properly use components as we go"_, below…
-1. A file in `includes/` named `component-<component-name>.php` that defines callbacks to run on the `truss_<component>` action.
-    * Use our Yeoman generator script for the skeleton of this file
+1. A file in `includes/components` named `truss-<component-name>.php` that defines callbacks to run on the `truss_<component_name>` action.
+    * Use the [Yeoman generator script](https://bitbucket.org/rocketlift/wp-truss-generator/) to create and add to these files.
 1. A Sass file in a subdirectory of `library/assets/sass/globals/extends` named `<component-name>.scss`, which defines a Sass placeholder `%<component-name>`, fully implementing the intended layout/appearance.
     *  If the component is for layout, its extend should be in `sass/globals/extends/layout/`
     *  If the component is for appearance, its extend should be in `sass/globals/extends/components/`
@@ -137,7 +134,7 @@ It is a short term goal of the Truss development project to fully convert page t
 
 Here are a few things to keep in mind while **updating page templates to properly use components:**
 
-- You'll often need to convert existing markup into components. Go ahead.
+- You'll often need to convert existing markup into components. Go ahead and do it as needed.
 - Carefully consider the naming of new components, following the _Rules for Component Nomenclature_ (see above).
 - Translate existing markup into _Truss standards_ (see above).
 - Migrate code to where its should be within Truss' file structure.

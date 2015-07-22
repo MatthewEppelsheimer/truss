@@ -2,12 +2,12 @@
 /**
  * The main template file.
  *
+ * Uses default layout of a main column, plus a right sidebar.
+ *
  * @package truss
  */
 
-// Layout: A primary column and a right-hand sidebar column
-add_action( 'truss', 'truss_column_primary', 200 );
-add_action( 'truss', 'truss_sidebar_primary', 300 );
+// Layout: Use default. See `includes/truss.php`.
 
 // Strong as steel.
 truss();

@@ -1,11 +1,11 @@
 <?php
 /**
- * Components intended to be hooked to `truss_main`
+ * The `truss_column_primary` component — the main column on any given page.
  *
  * @package truss
  */
 
-add_action( 'truss_main', 'truss_layout_main', 100 );
+add_action( 'truss_column_primary', 'truss_component_main', 100 );
 
 /**
  * The webpage's main section
@@ -20,13 +20,13 @@ add_action( 'truss_main', 'truss_layout_main', 100 );
  *
  * @package truss
  */
-function truss_layout_main() {
+function truss_component_main() {
 	tha_content_before(); ?>
 	<main class="<?php echo apply_filters( 'truss_class_site-main', 'site-main' ); ?>" role="main">
 
 		<?php
 		tha_content_top();
-		truss_loop();
+		truss( 'main_content' );
 		tha_content_bottom();
 		?>
 

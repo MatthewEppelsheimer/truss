@@ -19,7 +19,7 @@ get_header(); ?>
 					 * If you want to override this in a child theme, then include a file
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
-					get_template_part( 'page-templates/partials/content', 'page' );
+					get_template_part( 'page-templates/partials-to-refactor/content', 'page' );
 				?>
 
 			<?php endwhile; ?>
@@ -28,7 +28,7 @@ get_header(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'partials/content', 'none' ); ?>
+			<?php get_template_part( 'partials-to-refactor/content', 'none' ); ?>
 
 		<?php endif; ?>
 
